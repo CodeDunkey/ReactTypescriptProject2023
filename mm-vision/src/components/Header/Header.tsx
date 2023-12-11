@@ -5,16 +5,25 @@ const headerTitle = <div className='headerWrapperTitle'>
     <div className='headerTitle2'>Kontakt os på tlf. 70221744</div>
 </div>
 
-const headerCart = <div className='headerWrapperCart'>Cart</div>
+const headerCart = <div className='headerWrapperCart'>
+    <div className='picture'></div>
+
+    <div className='headerWrapperCart'>
+    <div className='cartWrapper'>
+        <div className='cart'></div>
+        <div className='fullPrice'></div>
+    </div>
+    </div>
+</div>
 
 const headerMenu = <div className='headerWrapperMenu'>
     <nav className='menu'>
         <div className='itemWrapper'>
             <div className='menuItem'>STATIONÆRE</div>|
-            <div className='menuItem'>STATIONÆRE</div>|
-            <div className='menuItem'>STATIONÆRE</div>|
-            <div className='menuItem'>STATIONÆRE</div>|
-            <div className='menuItem'>STATIONÆRE</div>
+            <div className='menuItem'>BÆRBARE</div>|
+            <div className='menuItem'>HARDWARE</div>|
+            <div className='menuItem'>TILBEHØR</div>|
+            <div className='menuItem'>SOFTWARE</div>
         </div>
 
         <div className='searchWrapper'>

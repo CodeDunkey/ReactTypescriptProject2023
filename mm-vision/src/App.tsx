@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Site from './components/Site';
+import Site from './components/SiteWrapper/Site';
 
 function App() {
   return (

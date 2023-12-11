@@ -42,6 +42,33 @@
     background-color: rgb(77, 162, 40);
     height: 60px;
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    .picture{
+        background-image: url("./VisionLogo.png");
+        background-size: cover;
+        height: 60px;
+        width: 216px;
+    }
+
+    .logoCartWrapper{
+        display: flex;
+        height: 60px;
+        width: 300px;
+        .logo{
+            background-image: url("./shoppingCartIcon.png");
+            background-size: cover;
+        }
+
+        .cartWrapper{
+            display: flex;
+            flex-direction: column;
+
+
+
+        }
+    }
 }
 
 .headerWrapperMenu {
@@ -70,7 +97,11 @@
             align-items: center;
 
             .menuItem {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
                 color: aliceblue;
+                padding-left: 10px;
+                padding-right: 10px;
             }
         }
 
