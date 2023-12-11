@@ -1,0 +1,14 @@
+
+.main{
+    background-color: darkgray;
+    // border: 0.5px solid black;
+    width: 1170px;
+    height: 1567px;
+
+    .mainPicture{
+        background-image: url("SkærmbilledeAvatar.png");
+        background-size: cover;
+        height: 468px;
+        width: 100%;
+    }
+}
