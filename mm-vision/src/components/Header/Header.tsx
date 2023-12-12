@@ -8,11 +8,12 @@ const headerTitle = <div className='headerWrapperTitle'>
 const headerCart = <div className='headerWrapperCart'>
     <div className='picture'></div>
 
-    <div className='headerWrapperCart'>
-    <div className='cartWrapper'>
-        <div className='cart'></div>
-        <div className='fullPrice'></div>
-    </div>
+    <div className='logoCartWrapper'>
+        <div className='logo'></div>
+        <div className='cartWrapper'>
+            <div className='cart'></div>
+            <div className='fullPrice'></div>
+        </div>
     </div>
 </div>
 

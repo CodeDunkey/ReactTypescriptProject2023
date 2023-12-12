@@ -1,5 +1,44 @@
-.footerWrapper{
+.footerWrapper {
     background-color: lightslategray;
     width: 1170px;
     height: 465px;
+
+    .footerBannerWrapper {
+        background-color: #222;
+        display: flex;
+        height: 38px;
+        width: 1140px;
+
+        .category {
+            display: flex;
+            // justify-content: center;
+
+            color: aliceblue;
+            height: 17.5px;
+            width: 285px;
+        }
+    }
+
+    .subCategoriesWrapper {
+        display: flex;
+
+        .subCategories {
+            background-color: #0f0f0f;
+            height: 176px;
+            width: 285px;
+
+        }
+    }
+
+    .footerContentWrapper{
+        width: 1140px;
+        height: 150px;
+        background-color: #0f0f0f;
+    }
+
+    .copyright{
+        width: 1140px;
+        height: 50px;
+        background-color: #0f0f0f;
+    }
 }
