@@ -29,9 +29,9 @@
     .productViewTopWrapper{
 
         display: flex;
-        
         .productViewTop{
-            display: block;
+            display: flex;
+            
             // justify-content: center;
             // align-items: center;
             // background-image: url("./pc.png");
@@ -48,19 +48,7 @@
         display: flex;
         height: 40px;
         width: 1140px;
-        .optionButton{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: aliceblue;
-            margin-left: 2px;
-            margin-right: 2px;
-            background-image: linear-gradient(180deg, #d10000, #8e0000);
-            width: 370px;
-            height: 40px;
-            border-radius: 1px;
-            border: 0;
-        }
+        
     }
 
     .banner{
@@ -72,12 +60,12 @@
         color: aliceblue;
         background-image: linear-gradient(180deg, #454545, #282727);
     }
-
     .productViewbottomWrapper{
         display: flex;
         height: 660px;
         width: 1180px;
         .productViewBottom{
+            flex-direction: column;
             display: flex;
             // justify-content: center;
             // align-items: center;

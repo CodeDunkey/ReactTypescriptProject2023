@@ -1,0 +1,61 @@
+
+// .button__background-color--lightgrey{
+//     background-color: lightgrey;
+// }
+
+// .button__background-color--darkgrey{
+//     background-color: darkgrey;
+// }
+
+// .button__background-color--darkgreen{
+//     background-color: darkgreen;
+// }
+
+// .button--rounded-corners {
+//     border-radius: 11px;
+//     border: solid 3px;
+// }
+
+// .button__border-color--red {
+//     border-color: red;
+// }
+
+// .button__border-color--blue {
+//     border-color: blue;
+// }
+
+// .button--rounded-faded {
+//     border: 0px;
+// }
+
+// .button--rounded-full-width {
+//     border-radius: 0px;
+// }
+
+.button__red{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+    margin-left: 2px;
+    margin-right: 2px;
+    background-image: linear-gradient(180deg, #d10000, #8e0000);
+    width: 370px;
+    height: 40px;
+    border-radius: 1px;
+    border: 0;
+}
+
+.button__green{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+    margin-left: 2px;
+    margin-right: 2px;
+    background-image: linear-gradient(180deg, #00d131, #017722);
+    width: 370px;
+    height: 40px;
+    border-radius: 1px;
+    border: 0;
+}

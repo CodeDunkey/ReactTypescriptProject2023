@@ -1,46 +1,60 @@
 // skal bruge en stock status og leveringstid på produkterne
-interface Product {
+export interface Product {
+    id: number
     type: string
     model: string
-    describtion: string
+    description: string
     picture: string
+    price: number
 }
 
 export const productList: Product[] = [
     {
+        id: 1,
         type: "PC",
         model: "aX",
-        describtion: "missing",
-        picture: "abc"
+        description: "missing",
+        picture: "abc",
+        price: 3000
     },
     {
+        id: 2,
         type: "PC",
         model: "bX",
-        describtion: "a",
-        picture: "abc"
+        description: "a",
+        picture: "abc",
+        price: 4000
     },
     {
+        id: 3,
         type: "Laptop",
         model: "cX",
-        describtion: "a",
-        picture: "abc"
+        description: "a",
+        picture: "abc",
+        price: 7000
     },
     {
+        id: 4,
         type: "Tilbehør Bundle",
         model: "dX",
-        describtion: "a",
-        picture: "abc"
+        description: "a",
+        picture: "abc",
+        price: 1000
     },
     {
+        id: 5,
         type: "Mekanisk Keyboard",
         model: "eX",
-        describtion: "a",
-        picture: "abc"
+        description: "a",
+        picture: "abc",
+        price: 600
     },
     {
+        id: 6,
         type: "PC",
         model: "fX",
-        describtion: "a",
-        picture: "abc"
+        description: "a",
+        picture: "abc",
+        price: 8500
     },
 ];
