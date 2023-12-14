@@ -4,7 +4,9 @@ import TextArea from '../TextArea/TextArea'
 import { CartInventory } from '../../Hooks/CartInventory'
 import { Product } from '../../Data/ProductList'
 
-export default function Header({ cart }: any){
+export default function Header({cart}: any){
+    
+    console.log("cart in header", typeof cart)
     return(
         <div className='headerWrapper'>
             <TextArea />

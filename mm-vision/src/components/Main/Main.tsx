@@ -8,7 +8,9 @@ import ProductViewBottom from './ProductViewBottom/ProductViewBottom'
 
 import './Main.scss'
 
-export default function Main({setcart}: any, {cart}: any){
+export default function Main(){
+//    console.log("setcart in main: ", typeof setcart)
+   
     return(
         <div className='main'>
             <MainPicture />
@@ -17,7 +19,10 @@ export default function Main({setcart}: any, {cart}: any){
             <ProductViewTop />
             <SeriesOption />
             <Banner />
-            <ProductViewBottom setcart={setcart} cart={cart}/>
+            <ProductViewBottom />
         </div>
     )
 }
+
+// setcart={setcart} cart={cart}
+// {setcart}: any, {cart}: any
