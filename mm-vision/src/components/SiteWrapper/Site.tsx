@@ -2,16 +2,20 @@ import Header from "../Header/Header"
 import Main from "../Main/Main"
 import Footer from "../Footer/Footer"
 import './Site.scss'
-import { useState } from "react"
+import React, { useState } from "react"
 import { Product } from "../../Data/ProductList"
+import { useCart } from "../../Hooks/useState"
 
-const initialState: Product = { id: 1, type: "a", model: "a", description: "a", picture: "a", price: 1 }
-const initialState2: Product = { id: 2, type: "a", model: "a", description: "a", picture: "a", price: 2 }
+const initialState: Product = { id: 1, type: "test-pc", model: "lightning", description: "gamer pc", picture: "a", price: 1 }
+const initialState2: Product = { id: 2, type: "test-laptop", model: "dev", description: "working pc", picture: "a", price: 2 }
+// type SetFunction = ReturnType<typeof setCart>
 
 export default function Site() {
-    const [cart, setCart] = useState<Product[]>([]);
+    const [cart, setCart] = useCart();
+    
+    
 
-    console.log("typewof cart in site: ", typeof cart, cart);
+    console.log("typewof setCart in site: ", typeof setCart);
     
     cart.map((item) => {
     console.log("mapped cart in site, showing id: ", item)});
@@ -25,10 +29,10 @@ export default function Site() {
     return (
         <div className="siteWrapper">
             <Header cart={cart} />
-            <Main /> 
+            <Main cart={cart} setcart={setCart}/> 
             <Footer />
         </div>
     )
 }
 
-// setcart={setCart} cart={cart}
+//

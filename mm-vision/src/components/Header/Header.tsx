@@ -1,7 +1,7 @@
 import './Header.scss'
 import Menu from './Menu/Menu'
 import TextArea from '../TextArea/TextArea'
-import { CartInventory } from '../../Hooks/CartInventory'
+import { CartInventory } from './CartInventory'
 import { Product } from '../../Data/ProductList'
 
 export default function Header({cart}: any){

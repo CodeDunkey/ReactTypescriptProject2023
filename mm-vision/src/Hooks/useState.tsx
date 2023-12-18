@@ -1,0 +1,7 @@
+import { useState } from "react";
+import { Product } from "../Data/ProductList";
+
+export const useCart = () => useState<Product[]>([]);
+export type useCartType = ReturnType<typeof useCart>;
+export type CartType = useCartType[0];
+export type SetCartType = useCartType[1];
