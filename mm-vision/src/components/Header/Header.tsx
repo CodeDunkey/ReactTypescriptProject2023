@@ -2,6 +2,7 @@ import './Header.scss'
 import Menu from './Menu/Menu'
 import TextArea from '../TextArea/TextArea'
 import { CartInventory } from './CartInventory'
+import { CartTotalPrice } from './CartTotalPrice'
 import { Product } from '../../Data/ProductList'
 
 export default function Header({cart}: any){
@@ -15,7 +16,10 @@ export default function Header({cart}: any){
 
                 <div className='logoCartWrapper'>
                     <div className='logo'></div>
+                    <div className='cartWrapper'>
                     <CartInventory cart={cart} />
+                    <CartTotalPrice cart={cart}/>
+                    </div>
                 </div>
             </div>
             <Menu />

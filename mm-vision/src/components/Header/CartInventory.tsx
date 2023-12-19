@@ -9,6 +9,6 @@ export function CartInventory({ cart }: any) {
     if(isCart(cart)) {mapOf = cart.map((item) => item.model)}
 
     return (
-        <div><h3 style={{color: "red"}}>Cart: {mapOf}</h3></div>
+        <div style={{color: "red"}}>Cart: {mapOf}</div>
     )
 }
