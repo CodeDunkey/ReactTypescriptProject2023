@@ -23,6 +23,8 @@ export default function Site() {
         }
     }
 
+    
+
     console.log("cart after remove: ",cart)
 
     return (
