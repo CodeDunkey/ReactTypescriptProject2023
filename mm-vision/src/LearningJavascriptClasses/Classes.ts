@@ -1,20 +1,4 @@
-import { Component, ReactNode } from "react";
-export class Test extends Component {
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         testName: "",
-    //         testNumber: 123,
-    //         testArray: []
-    //     }
-    // }
-    render(): ReactNode {
-        return (
-            <>
-            </>
-        )
-    }
-}
+
 
 
 // object literals. Et object der ikke kan bruges som skabelon. 
