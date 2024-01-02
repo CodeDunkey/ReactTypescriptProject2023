@@ -1,0 +1,45 @@
+.spinner-background {
+    height: 600px;
+    width: 600px;
+    background-color:darkgray
+}
+
+.spinner-icon {
+    background-image: url('../../Assets/spinner-of-dots.png');
+    background-size: cover;
+    /* border: 2px solid yellow; */
+    height: 200px;
+    width: 200px;
+    pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .spinner-icon {
+        animation: logo-spin infinite 1.5s steps(8);
+    }
+}
+
+.spinner-icon {
+    /* background-color: #282c34; */
+    /* min-height: 100vh; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.App-link {
+    color: #61dafb;
+}
+
+@keyframes logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

@@ -1,7 +1,7 @@
 import Header from "../Header/Header"
 import Main from "../Main/Main"
 import Footer from "../Footer/Footer"
-import { Test } from "../Classes/ClassTimer"
+import  API  from "../Classes/ClassTimer"
 import './Site.scss'
 import React, { useState } from "react"
 import { Product } from "../../Data/ProductList"
@@ -33,7 +33,7 @@ export default function Site() {
             <Header cart={cart} />
             <Main cart={cart} setCart={setCart} removeFromCart={removeFromCart} />
             <Footer />
-            <Test />
+            <API />
         </div>
     )
 }
