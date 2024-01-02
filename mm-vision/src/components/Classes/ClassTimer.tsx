@@ -1,126 +1,164 @@
 import {Component, ReactNode } from "react";
 import './class.css'
 
-interface APIState {
-  isLoading: boolean;
-  cart: number[]; // Simulate cart data as an array of numbers
-}
-
-
-class API extends Component<{}, APIState> {
-  constructor(props: any) {
-    super(props);
-
-    this.state = {
-      isLoading: false,
-      cart: [],
-    };
-  }
-
-  // const [state: APIState] = useState({
-  //   isLoading: false,
-  //   cart: [],
-  // });
-
-  handleBuyButtonClick(): void {
-    this.setState((prevState: APIState) => ({
-      isLoading: true,
-      cart: prevState.cart,
-    }));
-
-    setTimeout(() => {
-      this.setState((prevState: APIState) => ({
-        isLoading: false,
-        cart: [
-          ...prevState.cart, // Prepend to the existing cart array
-          1, // Simulate adding to cart
-        ],
-      }));
-    }, 3000); // Simulate 3-second delay
-  }
-
-  render(): React.ReactElement<{}> {
-    return (
-      <div>
-        {this.state.isLoading && (
-          <div className="loading">Loading...</div>
-        )}
-        <button onClick={this.handleBuyButtonClick}>Buy</button>
-        <div className="spinner-background"><div className="spinner-icon"></div></div>
-        <p>Cart: {this.state.cart.length}</p>
-      </div>
-    );
-  }
-}
-
-export default API;
-
-// export class Test extends Component {
-//     // constructor(props) {
-//     //     super(props);
-//     //     this.state = {
-//     //         testName: "",
-//     //         testNumber: 123,
-//     //         testArray: []
-//     //     }
-//     // }
-//     render(): ReactNode {
-//         return (
-//             <>
-//             </>
-//         )
-//     }
+// interface APIState {
+//   isLoading: boolean;
+//   cart: number[]; // Simulate cart data as an array of numbers
 // }
 
-// class API {
-//     constructor() {
-//       this.isLoading = false;
-//     }
-  
-//     handleBuyButtonClick() {
-//       this.showLoadingIcon();
-  
-//       setTimeout(() => {
-//         this.hideLoadingIcon();
-//         this.updateCart();
-//       }, 3000); // Simulate 3-second delay
-//     }
-  
-//     showLoadingIcon() {
-//       this.isLoading = true;
-//       console.log('Loading icon shown');
-//     }
-  
-//     hideLoadingIcon() {
-//       this.isLoading = false;
-//       console.log('Loading icon hidden');
-//     }
-  
-//     updateCart() {
-//       console.log('Cart updated');
-//     }
+// class API extends Component<{}, APIState> {
+//   constructor(props: any) {
+//     super(props);
+
+//     this.state = {
+//       isLoading: false,
+//       cart: [],
+//     };
 //   }
-  
-//   const api = new API();
-  //#endregion
 
-//#region 
+//   // const [state: APIState] = useState({
+//   //   isLoading: false,
+//   //   cart: [],
+//   // });
 
-// class API extends Component {
-//     constructor(props) {
-//       super(props);
-  
-//       this.state = {
+//   handleBuyButtonClick(): void {
+//     this.setState((prevState: APIState) => ({
+//       isLoading: true,
+//       cart: prevState.cart,
+//     }));
+
+//     setTimeout(() => {
+//       this.setState((prevState: APIState) => ({
 //         isLoading: false,
-//         cart: [],
-//       };
-//     }
-  
-//     handleBuyButtonClick() {
-//       this.setState((prevState) => ({
-//         isLoading: true,
-//         cart: prevState.cart,
+//         cart: [
+//           ...prevState.cart, // Prepend to the existing cart array
+//           1, // Simulate adding to cart
+//         ],
 //       }));
+//     }, 3000); // Simulate 3-second delay
+    
+//   }
+
+//   render(): React.ReactElement<{}> {
+//     return (
+//       <div>
+//         {this.state.isLoading && (
+//           <div className="loading">Loading...</div>
+//         )}
+//         <button onClick={this.handleBuyButtonClick}>Buy</button>
+
+//         <div className="spinner-background"><div className="spinner-icon"></div></div>
+        
+//         <p>Cart: {this.state.cart.length}</p>
+//       </div>
+//     );
+//   }
+// }
+
+
+// export class Test extends Component {
+  //     // constructor(props) {
+    //     //     super(props);
+    //     //     this.state = {
+      //     //         testName: "",
+      //     //         testNumber: 123,
+      //     //         testArray: []
+      //     //     }
+      //     // }
+      //     render(): ReactNode {
+        //         return (
+          //             <>
+          //             </>
+          //         )
+          //     }
+          // }
+interface Loading {
+  isLoading: boolean,
+}
+class API2 extends Component<{}, Loading>{
+  
+  private isState: Loading = {
+    isLoading: false,
+  };
+  
+  constructor(props: any) {
+    // 
+    //
+    super(props)
+    
+    this.state = {
+      isLoading: false,
+    };
+    
+  }
+  
+  handleBuyButtonClick() {
+    this.setState({
+      isLoading: true,
+    })
+    this.showLoadingIcon()
+    // console.log("showLoadingIcon in handleClick", this.state.isLoading)
+    setTimeout(() => {
+      this.setState({
+      isLoading: false,
+    })
+    this.updateCart()
+    }, 3000); // Simulate 3-second delay
+    
+  }
+  
+
+  
+
+  showLoadingIcon() {
+    // console.log("showLoadingIcon")
+    
+    console.log('Loading icon shown');
+    // console.log(this.state.isLoading) 
+    return(
+      <div className="spinner-background"><div className="spinner-icon"></div></div>
+    )
+  }
+  updateCart() {
+    console.log('Cart needs to update');
+  }
+    
+  render(){
+    return(
+      <>
+      <button onClick={this.handleBuyButtonClick.bind(this)}>API2</button>
+      {console.log("showing the rendered state", this.state.isLoading)}
+      {(this.state.isLoading)&&(this.showLoadingIcon())}    
+      </>
+      )
+    }
+  }
+            
+export default API2;
+
+
+
+
+            // const api2 = new API2();
+            //#endregion
+            
+            //#region 
+            
+            // class API extends Component {
+//     constructor(props) {
+  //       super(props);
+  
+  //       this.state = {
+    //         isLoading: false,
+    //         cart: [],
+    //       };
+    //     }
+    
+    //     handleBuyButtonClick() {
+      //       this.setState((prevState) => ({
+        //         isLoading: true,
+        //         cart: prevState.cart,
+        //       }));
   
 //       setTimeout(() => {
 //         this.setState((prevState) => ({
