@@ -65,7 +65,7 @@
         height: 60px;
         width: 300px;
         .logo{
-            
+            margin-right: 15px;
             background-image: url("./background-cart-icon.png");
             // background-image: linear-gradient(180deg, red, black);
             background-size: cover;
@@ -77,8 +77,9 @@
 
         .cartWrapper{
             display: flex;
+            justify-content: space-between;
             flex-direction: column;
-
+            height: 40px;
             // .cart{}
 
             // .fullPrice{}

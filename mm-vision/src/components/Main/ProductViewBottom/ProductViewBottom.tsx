@@ -1,17 +1,18 @@
 import '../Main.scss'
-import { productList } from '../../../Data/ProductList'
 import Button from '../../Button/Button';
-import {CartInventory} from '../../../Hooks/CartInventory';
+import {CartInventory} from '../../Header/CartInventory';
+import { FunctionExpression } from 'typescript';
+import { productList, Product, SetFunction, FindAndRemoveFromCartFun} from '../../../Data/ProductList'
 
-export default function ProductViewBottom(){
+export default function ProductViewBottom({cart, setCart, removeFromCart}: {cart: Product[], setCart: SetFunction, removeFromCart: FindAndRemoveFromCartFun}){
     
     const listSlice = productList.slice(3, 6)
-    // console.log(listSlice);
-    const product = listSlice.map((item) => {
+    
+    const product = listSlice.map((item: Product) => {
         return(
             <div className='productViewBottom'>{item.type}--{item.model}-- Price: {item.price}--
-                <Button backgroundColor='green' text="Køb" click={()=> console.log("Add ", item.id," to cart")}/>
-                <Button backgroundColor='red' text="fjern" click={()=> console.log("Removing from cart")}/>
+                <Button backgroundColor='green' text="Køb" on_click={()=> setCart([...cart, item])}/>
+                <Button backgroundColor='red' text="fjern" on_click={()=> removeFromCart(item.individualRandomNr)}/>
             </div>
         )
 
@@ -21,6 +22,3 @@ export default function ProductViewBottom(){
         <div className='productViewbottomWrapper'> {product}</div>
     )
 }
-
-// setcart([item])
-// {setcart}: any, {cart}: any

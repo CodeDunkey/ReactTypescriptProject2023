@@ -1,34 +1,39 @@
 import Header from "../Header/Header"
 import Main from "../Main/Main"
 import Footer from "../Footer/Footer"
+import { Test } from "../Classes/ClassTimer"
 import './Site.scss'
-import { useState } from "react"
+import React, { useState } from "react"
 import { Product } from "../../Data/ProductList"
 
-const initialState: Product = { id: 1, type: "a", model: "a", description: "a", picture: "a", price: 1 }
-const initialState2: Product = { id: 2, type: "a", model: "a", description: "a", picture: "a", price: 2 }
+
+
 
 export default function Site() {
     const [cart, setCart] = useState<Product[]>([]);
 
-    console.log("typewof cart in site: ", typeof cart, cart);
-    
-    cart.map((item) => {
-    console.log("mapped cart in site, showing id: ", item)});
-    
-    // if(cart.length < 1){
+    const removeFromCart = (param: number) => {
+        const findInCart = cart.find(findRandomNr => findRandomNr.individualRandomNr === param)
+        
+        if (findInCart !== undefined) {
+            const cartIndex = cart.indexOf(findInCart);
+            const cartSlice1 = cart.slice(0, cartIndex);
+            const cartSlice2 = cart.slice(cartIndex + 1, cart.length);
+            const concatCart = cartSlice1.concat(cartSlice2);
+            setCart(concatCart);
+        }
+    }
 
-    //     setCart([...cart, initialState2])
-    // }
-    console.log("cart in site after setCart: ", cart);    
+    
+
+    console.log("cart after remove: ",cart)
 
     return (
         <div className="siteWrapper">
             <Header cart={cart} />
-            <Main /> 
+            <Main cart={cart} setCart={setCart} removeFromCart={removeFromCart} />
             <Footer />
+            <Test />
         </div>
     )
 }
-
-// setcart={setCart} cart={cart}

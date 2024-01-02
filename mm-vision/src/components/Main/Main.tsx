@@ -5,11 +5,14 @@ import InfoBar from './InfoBar/InfoBar'
 import SeriesOption from './SeriesOption/SeriesOption'
 import Banner from './Banner/Banner'
 import ProductViewBottom from './ProductViewBottom/ProductViewBottom'
-
+// import { CartType, SetCartType } from '../../Hooks/useState'
 import './Main.scss'
+import { Product, SetFunction, FindAndRemoveFromCartFun} from '../../Data/ProductList'
 
-export default function Main(){
-//    console.log("setcart in main: ", typeof setcart)
+export default function Main({cart, setCart, removeFromCart}: {cart:Product[], setCart: SetFunction, removeFromCart: FindAndRemoveFromCartFun}){
+
+    // CartType SetCartType
+    //    console.log("setcart in main: ", typeof setcart)
    
     return(
         <div className='main'>
@@ -19,7 +22,7 @@ export default function Main(){
             <ProductViewTop />
             <SeriesOption />
             <Banner />
-            <ProductViewBottom />
+            <ProductViewBottom  cart={cart} setCart={setCart} removeFromCart={removeFromCart}/>
         </div>
     )
 }
