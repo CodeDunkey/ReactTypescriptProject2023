@@ -56,7 +56,104 @@ class API2 extends Component<{}, Loading>{
             
 export default API2;
 
+// fra classTest
+//#region 
+// import React, { useRef, useState ,Component, useEffect } from "react";
+// import './class.css'
+// interface SpinnerProps {}
+// interface SpinnerState {
+//     isSpinnerVisible: boolean;
+// }
 
+// const Spinner: React.FC<SpinnerProps> = () => {
+
+//     const [isSpinnerVisible, setSpinnerVisible] = useState(false)
+
+//     const showSpinnerFor3Seconds = () => {
+//         setSpinnerVisible(true)
+
+//         setTimeout(() => {
+//             setSpinnerVisible(false)
+//         }, 8000)
+//     };
+
+//     useEffect(() => {
+//         const handleBeforeUnload = (event: BeforeUnloadEvent) => {
+//             showSpinnerFor3Seconds();
+//             event.returnValue = '????'
+//         }
+
+//         window.addEventListener('beforeunload', handleBeforeUnload);
+//         return () => {
+//             window.removeEventListener('beforeunload', handleBeforeUnload)
+//         }
+//     })
+
+//     return(
+//                     <>
+                        
+//                         {isSpinnerVisible && <div className="spinner"></div>}
+//                     </>
+//                 )
+// }
+
+
+// export default Spinner;
+
+// fra App filen:
+
+// import React, { RefObject } from 'react';
+// import { useRef, useState } from 'react';
+// import logo from './logo.svg';
+// // import './App.css';
+// import Spinner from './Class';
+// import './class.css'
+
+// const App: React.FC = () => {
+//   return(
+//     <div className='testFrame'>
+//       <Spinner />
+//     </div>
+//   )
+// }
+
+// export default App;
+
+// css classen:
+
+// .spinner {
+//   position: fixed;
+//   top: 50%;
+//   left: 50%;
+//   margin-top: -50px; 
+//   margin-left: -50px; 
+//   border: 4px solid rgba(0, 0, 0, 0.1);
+//   border-left: 4px solid #3498db;
+//   border-radius: 50%;
+//   width: 20px;
+//   height: 20px;
+//   /* animation: spin 1s linear ; */
+// }
+
+// @media (prefers-reduced-motion: no-preference) {
+//   .spinner {
+//       animation: spin infinite 1.5s linear;
+//   }
+// }
+
+// @keyframes spin {
+//   form { transform: rotate(0deg); }
+//   to { transform: rotate(360deg); }
+// }
+
+// .testFrame{
+//   display: flex;
+//   background-color: blue;
+//   height: 100vh;
+//   /* width: 100vh; */
+// }
+
+//#endregion
 
 // interface APIState {
 //   isLoading: boolean;
