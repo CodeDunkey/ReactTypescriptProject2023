@@ -1,5 +1,62 @@
-import {Component, ReactNode } from "react";
+import {Component, ReactNode, useEffect, useState } from "react";
 import './class.css'
+
+interface Loading {
+  isLoading: boolean,
+}
+class API2 extends Component<{}, Loading>{
+  
+  constructor(props: any) {
+    super(props)
+    
+    this.state = {
+      isLoading: false,
+    };
+    
+  }
+  
+  handleBuyButtonClick() {
+    this.setState({
+      isLoading: true,
+    })
+    this.showLoadingIcon()
+    // console.log("showLoadingIcon in handleClick", this.state.isLoading)
+    setTimeout(() => {
+      this.setState({
+      isLoading: false,
+    })
+    this.updateCart()
+    }, 3000); // Simulate 3-second delay
+    
+  }
+
+  showLoadingIcon() {
+    // console.log("showLoadingIcon")
+    
+    console.log('Loading icon shown');
+    // console.log(this.state.isLoading) 
+    return(
+      <div className="spinner-background"><div className="spinner-icon"></div></div>
+    )
+  }
+  updateCart() {
+    console.log('Cart needs to update');
+  }
+    
+  render(){
+    return(
+      <>
+      <button onClick={this.handleBuyButtonClick.bind(this)}>API2</button>
+      {console.log("showing the rendered state", this.state.isLoading)}
+      {(this.state.isLoading)&&(this.showLoadingIcon())}    
+      </>
+      )
+    }
+  }
+            
+export default API2;
+
+
 
 // interface APIState {
 //   isLoading: boolean;
@@ -72,69 +129,6 @@ import './class.css'
           //         )
           //     }
           // }
-interface Loading {
-  isLoading: boolean,
-}
-class API2 extends Component<{}, Loading>{
-  
-  private isState: Loading = {
-    isLoading: false,
-  };
-  
-  constructor(props: any) {
-    // 
-    //
-    super(props)
-    
-    this.state = {
-      isLoading: false,
-    };
-    
-  }
-  
-  handleBuyButtonClick() {
-    this.setState({
-      isLoading: true,
-    })
-    this.showLoadingIcon()
-    // console.log("showLoadingIcon in handleClick", this.state.isLoading)
-    setTimeout(() => {
-      this.setState({
-      isLoading: false,
-    })
-    this.updateCart()
-    }, 3000); // Simulate 3-second delay
-    
-  }
-  
-
-  
-
-  showLoadingIcon() {
-    // console.log("showLoadingIcon")
-    
-    console.log('Loading icon shown');
-    // console.log(this.state.isLoading) 
-    return(
-      <div className="spinner-background"><div className="spinner-icon"></div></div>
-    )
-  }
-  updateCart() {
-    console.log('Cart needs to update');
-  }
-    
-  render(){
-    return(
-      <>
-      <button onClick={this.handleBuyButtonClick.bind(this)}>API2</button>
-      {console.log("showing the rendered state", this.state.isLoading)}
-      {(this.state.isLoading)&&(this.showLoadingIcon())}    
-      </>
-      )
-    }
-  }
-            
-export default API2;
 
 
 
