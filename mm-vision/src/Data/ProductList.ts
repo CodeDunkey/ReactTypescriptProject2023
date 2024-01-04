@@ -7,6 +7,8 @@ export interface Product {
     description: string
     picture: string
     price: number
+    stock: number
+    deliveryTime: string
 }
 
 export const productList: Product[] = [
@@ -17,7 +19,9 @@ export const productList: Product[] = [
         model: "aX",
         description: "missing",
         picture: "abc",
-        price: 3000
+        price: 3000,
+        stock: 10,
+        deliveryTime: "7 dage"
     },
     {
         individualRandomNr: Math.random(),
@@ -26,7 +30,9 @@ export const productList: Product[] = [
         model: "bX",
         description: "a",
         picture: "abc",
-        price: 4000
+        price: 4000,
+        stock: 0,
+        deliveryTime: "14 dage"
     },
     {
         individualRandomNr: Math.random(),
@@ -35,7 +41,9 @@ export const productList: Product[] = [
         model: "cX",
         description: "a",
         picture: "abc",
-        price: 7000
+        price: 7000,
+        stock: 10,
+        deliveryTime: "3 dage"
     },
     {
         individualRandomNr: Math.random(),
@@ -44,7 +52,9 @@ export const productList: Product[] = [
         model: "dX",
         description: "a",
         picture: "abc",
-        price: 1000
+        price: 1000,
+        stock: 3,
+        deliveryTime: "4 dage"
     },
     {
         individualRandomNr: Math.random(),
@@ -53,7 +63,9 @@ export const productList: Product[] = [
         model: "eX",
         description: "a",
         picture: "abc",
-        price: 600
+        price: 600,
+        stock: 0,
+        deliveryTime: "3 dage"
     },
     {
         individualRandomNr: Math.random(),
@@ -62,7 +74,9 @@ export const productList: Product[] = [
         model: "fX",
         description: "a",
         picture: "abc",
-        price: 8500
+        price: 8500,
+        stock: 15,
+        deliveryTime: "6 dage"
     },
 ];
 

@@ -1,6 +1,6 @@
 .main{
     background-color: black;
-    // border: 0.5px solid black;
+    border: 0.5px solid yellow;
     width: 1170px;
     height: 1567px;
 
@@ -16,7 +16,7 @@
         align-items: center;
         justify-content: space-between;
         background-image: linear-gradient(180deg, #1f1f1f, black);
-        // border: 0.5px solid darkgrey;
+        border: 0.5px solid blue;
         padding-left: 30px;
         padding-right: 30px;
         color: aliceblue;
@@ -27,7 +27,7 @@
     }
 
     .productViewTopWrapper{
-
+        border: 0.5px solid red;
         display: flex;
         .productViewTop{
             display: flex;
@@ -61,12 +61,16 @@
         background-image: linear-gradient(180deg, #454545, #282727);
     }
     .productViewbottomWrapper{
+        border: 0.5px solid purple;
         display: flex;
+        flex-wrap: wrap;
+
         height: 660px;
         width: 1180px;
         .productViewBottom{
-            flex-direction: column;
+            border: 0.5px solid orange;
             display: flex;
+            flex-direction: column;
             // justify-content: center;
             // align-items: center;
             // background-image: url("./pc.png");

@@ -18,7 +18,6 @@ export default function Main({cart, setCart, removeFromCart}: {cart:Product[], s
         <div className='main'>
             <MainPicture />
             <InfoBar />
-            
             <ProductViewTop />
             <SeriesOption />
             <Banner />
