@@ -59,3 +59,17 @@
     border-radius: 1px;
     border: 0;
 }
+
+.button__hidden{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+    margin-left: 2px;
+    margin-right: 2px;
+    visibility: hidden;
+    width: 370px;
+    height: 40px;
+    border-radius: 1px;
+    border: 0;
+}

@@ -8,7 +8,6 @@ import { Product } from "../../Data/ProductList"
 
 export default function Site() {
     const [cart, setCart] = useState<Product[]>([]);
-
     const removeFromCart = (param: number) => {
         const findInCart = cart.find(findRandomNr => findRandomNr.individualRandomNr === param)
         
@@ -20,15 +19,12 @@ export default function Site() {
             setCart(concatCart);
         }
     }
-
-    console.log("cart after remove: ",cart)
-
     return (
         <div className="siteWrapper">
             <Header cart={cart} />
             <Main cart={cart} setCart={setCart} removeFromCart={removeFromCart} />
-            <Footer />
-            <API2 />
+            {/* <Footer /> */}
+            {/* <API2 /> */}
         </div>
     )
 }

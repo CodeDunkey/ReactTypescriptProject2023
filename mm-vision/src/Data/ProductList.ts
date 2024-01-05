@@ -1,4 +1,3 @@
-// skal bruge en stock status og leveringstid på produkterne
 export interface Product {
     individualRandomNr: number
     id: number
@@ -79,8 +78,6 @@ export const productList: Product[] = [
         deliveryTime: "6 dage"
     },
 ];
-
-console.log("productList", productList);
 
 export type SetFunction = React.Dispatch<React.SetStateAction<Product[]>>;
 export type FindAndRemoveFromCartFun = (param: number) => void;
