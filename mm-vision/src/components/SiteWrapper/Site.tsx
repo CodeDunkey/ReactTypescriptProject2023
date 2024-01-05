@@ -1,13 +1,10 @@
 import Header from "../Header/Header"
 import Main from "../Main/Main"
 import Footer from "../Footer/Footer"
-import  API2  from "../Classes/ClassTimer"
+import {API2}  from "../APISimulate/ClassTimer"
 import './Site.scss'
 import React, { useState } from "react"
 import { Product } from "../../Data/ProductList"
-
-
-
 
 export default function Site() {
     const [cart, setCart] = useState<Product[]>([]);
@@ -23,8 +20,6 @@ export default function Site() {
             setCart(concatCart);
         }
     }
-
-    
 
     console.log("cart after remove: ",cart)
 

@@ -12,7 +12,7 @@ export default function Header({cart}: any){
         <div className='headerWrapper'>
             <TextArea />
             <div className='headerWrapperCart'>
-                <div className='picture'></div>
+                {/* <div className='picture'></div> */}
 
                 <div className='logoCartWrapper'>
                     <div className='logo'></div>

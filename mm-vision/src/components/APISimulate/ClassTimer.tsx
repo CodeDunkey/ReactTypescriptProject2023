@@ -1,11 +1,22 @@
 import {Component, ReactNode, useEffect, useState } from "react";
 import './class.css'
+// import Product from "../Wrapper/Product.tsx/Product";
+import { Product, SetFunction, FindAndRemoveFromCartFun } from "../../Data/ProductList";
+import { SpinnerLoadingIcon } from "./Spinner";
 
+//#region 
+interface Spinner {
+  showSpinner: ()=> void,
+}
 interface Loading {
   isLoading: boolean,
 }
-class API2 extends Component<{}, Loading>{
+export class API2 extends Component<{}, Loading, Spinner>{
   
+  private spinnerIcon = {
+    showSpinner: ()=>SpinnerLoadingIcon(),
+  }
+
   constructor(props: any) {
     super(props)
     
@@ -13,13 +24,17 @@ class API2 extends Component<{}, Loading>{
       isLoading: false,
     };
     
+
+
   }
   
   handleBuyButtonClick() {
     this.setState({
       isLoading: true,
     })
-    this.showLoadingIcon()
+
+    this.spinnerIcon.showSpinner()
+    // this.showLoadingIcon()
     // console.log("showLoadingIcon in handleClick", this.state.isLoading)
     setTimeout(() => {
       this.setState({
@@ -29,16 +44,13 @@ class API2 extends Component<{}, Loading>{
     }, 3000); // Simulate 3-second delay
     
   }
-
-  showLoadingIcon() {
-    // console.log("showLoadingIcon")
-    
-    console.log('Loading icon shown');
-    // console.log(this.state.isLoading) 
-    return(
-      <div className="spinner-background"><div className="spinner-icon"></div></div>
-    )
-  }
+  
+  // showLoadingIcon() {
+  //   console.log('Loading icon shown'); 
+  //   return(
+  //     <div className="spinner-background"><div className="spinner-icon"></div></div>
+  //   )
+  // }
   updateCart() {
     console.log('Cart needs to update');
   }
@@ -46,59 +58,86 @@ class API2 extends Component<{}, Loading>{
   render(){
     return(
       <>
-      <button onClick={this.handleBuyButtonClick.bind(this)}>API2</button>
-      {console.log("showing the rendered state", this.state.isLoading)}
-      {(this.state.isLoading)&&(this.showLoadingIcon())}    
+        <button onClick={this.handleBuyButtonClick.bind(this)}>API2</button>
+        {console.log("showing the rendered state", this.state.isLoading)}
+        {(this.state.isLoading)&&(this.spinnerIcon.showSpinner())}    
       </>
-      )
-    }
+    )
   }
-            
-export default API2;
+}
+//#endregion    
 
-// fra classTest
+
 //#region 
-// import React, { useRef, useState ,Component, useEffect } from "react";
-// import './class.css'
-// interface SpinnerProps {}
-// interface SpinnerState {
-//     isSpinnerVisible: boolean;
-// }
+interface SpinnerProps {}
+interface SpinnerState {
+    isSpinnerVisible: boolean;
+}
 
-// const Spinner: React.FC<SpinnerProps> = () => {
+export const SpinnerSiteRefresh: React.FC<SpinnerProps> = () => {
 
-//     const [isSpinnerVisible, setSpinnerVisible] = useState(false)
+  const [isSpinnerVisible, setSpinnerVisible] = useState(false)
 
-//     const showSpinnerFor3Seconds = () => {
-//         setSpinnerVisible(true)
+  const showSpinnerFor3Seconds = () => {
+      setSpinnerVisible(true)
 
-//         setTimeout(() => {
-//             setSpinnerVisible(false)
-//         }, 8000)
-//     };
+      setTimeout(() => {
+          setSpinnerVisible(false)
+      }, 3000)
+  };
 
-//     useEffect(() => {
-//         const handleBeforeUnload = (event: BeforeUnloadEvent) => {
-//             showSpinnerFor3Seconds();
-//             event.returnValue = '????'
-//         }
+  useEffect(() => {
+      const handleBeforeUnload = (event: BeforeUnloadEvent) => {
+          showSpinnerFor3Seconds();
+          event.returnValue = '????'
+      }
 
-//         window.addEventListener('beforeunload', handleBeforeUnload);
-//         return () => {
-//             window.removeEventListener('beforeunload', handleBeforeUnload)
-//         }
-//     })
+      window.addEventListener('beforeunload', handleBeforeUnload);
+      return () => {
+          window.removeEventListener('beforeunload', handleBeforeUnload)
+      }
+  })
 
-//     return(
-//                     <>
-                        
-//                         {isSpinnerVisible && <div className="spinner"></div>}
-//                     </>
-//                 )
-// }
+  return(
+      <>
+          {isSpinnerVisible && <div className="spinner-background"><div className="spinner-icon"></div></div>}
+      </>
+  )
+}
+//#endregion
 
 
-// export default Spinner;
+
+class SimulateServerCall{
+  
+  constructor(){
+
+  }
+
+  
+
+
+  AddToCart({cart, item, setCart}: {cart: Product[], item: Product, setCart: SetFunction }){
+    // {item, cart}: {item: Product, cart: Product[]}
+    // console.log("AddToCart is passed", item.model);
+    const updatedCart = [...cart, item]; 
+    item.stock--; 
+    setCart(updatedCart); 
+
+    // { const updatedCart = [...cart, item]; item.stock--; setCart(updatedCart); }
+  }
+
+  SubtractFromCart({cart, item, removeFromCart}: {cart: Product[], item: Product, removeFromCart: FindAndRemoveFromCartFun}){
+    
+
+    item.stock++;
+    removeFromCart(item.individualRandomNr);
+    // console.log("SubtractFromCart is passed");
+    // { const updatedRemoveFromCart = item.stock++; removeFromCart(item.individualRandomNr);}
+  }
+}
+
+export const webAPIhandleBuy = new SimulateServerCall();
 
 // fra App filen:
 
@@ -106,13 +145,13 @@ export default API2;
 // import { useRef, useState } from 'react';
 // import logo from './logo.svg';
 // // import './App.css';
-// import Spinner from './Class';
+// import SpinnerSiteRefresh from './Class';
 // import './class.css'
 
 // const App: React.FC = () => {
 //   return(
 //     <div className='testFrame'>
-//       <Spinner />
+//       <SpinnerSiteRefresh />
 //     </div>
 //   )
 // }

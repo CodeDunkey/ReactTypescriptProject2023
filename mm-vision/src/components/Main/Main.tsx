@@ -16,11 +16,11 @@ export default function Main({cart, setCart, removeFromCart}: {cart:Product[], s
    
     return(
         <div className='main'>
-            <MainPicture />
-            <InfoBar />
-            <ProductViewTop />
-            <SeriesOption />
-            <Banner />
+            {/* <MainPicture /> */}
+            {/* <InfoBar /> */}
+            {/* <ProductViewTop /> */}
+            {/* <SeriesOption /> */}
+            {/* <Banner /> */}
             <ProductViewBottom  cart={cart} setCart={setCart} removeFromCart={removeFromCart}/>
         </div>
     )

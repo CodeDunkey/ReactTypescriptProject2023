@@ -11,9 +11,9 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    margin-top: -50px; 
-    margin-left: -50px; 
-   
+    margin-top: -50px;
+    margin-left: -50px;
+
     /* background: rgba(79, 79, 79, 0.2); */
     background-image: url('../../Assets/spinner-of-dots.png');
     background-size: cover;
@@ -26,7 +26,7 @@
 
 @media (prefers-reduced-motion: no-preference) {
     .spinner-icon {
-        animation: logo-spin infinite 1.5s steps(20);
+        animation: logo-spin infinite 1.5s steps(256);
     }
 }
 
@@ -53,4 +53,41 @@
     to {
         transform: rotate(360deg);
     }
+}
+
+.spinner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #3498db;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    /* animation: spin 1s linear ; */
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .spinner {
+        animation: spin infinite 1.5s linear;
+    }
+}
+
+@keyframes spin {
+    form {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.testFrame {
+    display: flex;
+    background-color: blue;
+    height: 100vh;
+    /* width: 100vh; */
 }
