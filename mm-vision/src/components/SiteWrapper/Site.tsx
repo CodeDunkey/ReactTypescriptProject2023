@@ -24,7 +24,7 @@ export default function Site() {
             <Header cart={cart} />
             <Main cart={cart} setCart={setCart} removeFromCart={removeFromCart} />
             {/* <Footer /> */}
-            {/* <API2 /> */}
+            <API2 />
         </div>
     )
 }

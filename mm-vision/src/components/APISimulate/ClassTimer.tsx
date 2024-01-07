@@ -4,7 +4,7 @@ import './class.css'
 import { Product, SetFunction, FindAndRemoveFromCartFun } from "../../Data/ProductList";
 import { SpinnerLoadingIcon } from "./Spinner";
 
-//#region 
+//#region // Test example Spinner
 interface Spinner {
   showSpinner: ()=> void,
 }
@@ -23,12 +23,10 @@ export class API2 extends Component<{}, Loading, Spinner>{
     this.state = {
       isLoading: false,
     };
-    
-
-
   }
   
   handleBuyButtonClick() {
+    
     this.setState({
       isLoading: true,
     })
@@ -44,13 +42,6 @@ export class API2 extends Component<{}, Loading, Spinner>{
     }, 3000); // Simulate 3-second delay
     
   }
-  
-  // showLoadingIcon() {
-  //   console.log('Loading icon shown'); 
-  //   return(
-  //     <div className="spinner-background"><div className="spinner-icon"></div></div>
-  //   )
-  // }
   updateCart() {
     console.log('Cart needs to update');
   }
@@ -67,8 +58,7 @@ export class API2 extends Component<{}, Loading, Spinner>{
 }
 //#endregion    
 
-
-//#region 
+//#region // Spinner before page refresh.
 interface SpinnerProps {}
 interface SpinnerState {
     isSpinnerVisible: boolean;
@@ -105,39 +95,93 @@ export const SpinnerSiteRefresh: React.FC<SpinnerProps> = () => {
   )
 }
 //#endregion
+interface SpinnerBuy {
+  showSpinner: ()=> void,
+}
+interface LoadingBuy {
+  isNowLoading: boolean,
+  afterLoading: boolean,
+}
+export class SimulateServerCall extends Component<{}, LoadingBuy, SpinnerBuy>{
+  private showSpinner = {
+    showSpinner: () => SpinnerLoadingIcon(),
+  }
+  constructor(props: any){
+    super(props)
 
+    this.state = {
+      isNowLoading: false,
+      afterLoading: false,
+    };
 
-
-class SimulateServerCall{
-  
-  constructor(){
-
+    // console.log(this.state.isNowLoading)
   }
 
-  
+  handleBuyButtonClick({cart, item, setCart}: {cart: Product[], item: Product, setCart: SetFunction }){
+    
+    
+    this.setState({
+      isNowLoading: true,
+    })
+    
+    console.log("works", this.state.isNowLoading)
 
+    this.showSpinner.showSpinner()
+    
+    setTimeout(()=>{
+      this.setState({
+        isNowLoading: false,
+      })
+      console.log("setTimeout works", this.state.isNowLoading)
+    }, 3000);
 
-  AddToCart({cart, item, setCart}: {cart: Product[], item: Product, setCart: SetFunction }){
-    // {item, cart}: {item: Product, cart: Product[]}
-    // console.log("AddToCart is passed", item.model);
-    const updatedCart = [...cart, item]; 
-    item.stock--; 
-    setCart(updatedCart); 
+    this.setState({
+      afterLoading: true,
+    })
 
-    // { const updatedCart = [...cart, item]; item.stock--; setCart(updatedCart); }
-  }
-
-  SubtractFromCart({cart, item, removeFromCart}: {cart: Product[], item: Product, removeFromCart: FindAndRemoveFromCartFun}){
     
 
+    console.log("still works", this.state.isNowLoading)
+    if(this.state.afterLoading == true){
+      this.AddToCart({cart, item, setCart});
+
+      this.setState({
+        afterLoading: false,
+      })
+    }
+  }
+  
+  AddToCart({cart, item, setCart}: {cart: Product[], item: Product, setCart: SetFunction }){
+    
+    const updatedCart = [...cart, item];
+    item.stock--;
+    setCart(updatedCart);
+    
+  }
+  SubtractFromCart({cart, item, removeFromCart}: {cart: Product[], item: Product, removeFromCart: FindAndRemoveFromCartFun}){
     item.stock++;
     removeFromCart(item.individualRandomNr);
-    // console.log("SubtractFromCart is passed");
-    // { const updatedRemoveFromCart = item.stock++; removeFromCart(item.individualRandomNr);}
+    
+  }
+  
+  render(){
+    return(
+      <>
+        {/* <button onClick={this.handleBuyButtonClick.bind(this)}>api server call</button> */}
+        {(this.state.isNowLoading)&&(this.showSpinner.showSpinner())}
+        {console.log("showing the rendered 'SimulateServerCall' state: ", this.state.isNowLoading)}
+      </>
+    )
   }
 }
+export const webAPIhandleBuy = new SimulateServerCall({});
 
-export const webAPIhandleBuy = new SimulateServerCall();
+// {item, cart}: {item: Product, cart: Product[]}
+    // console.log("AddToCart is passed", item.model);
+// { const updatedCart = [...cart, item]; item.stock--; setCart(updatedCart); }
+
+// console.log("SubtractFromCart is passed");
+    // { const updatedRemoveFromCart = item.stock++; removeFromCart(item.individualRandomNr);}
 
 // fra App filen:
 
