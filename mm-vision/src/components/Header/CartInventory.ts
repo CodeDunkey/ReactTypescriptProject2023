@@ -3,13 +3,21 @@ import { Product, CartLine } from "../../Data/ProductList";
 
 export function CartInventory({ cart }: any) {
     let mapOf: Array<number> = [];
-    
+    let quantity: Array<number> = [];
+    let cartQauntity: number = 0;
     let isCart = (cart: CartLine[]): cart is CartLine[] => {
-        return ((cart as CartLine[]).map((item) => item.quantity) !== undefined);}
-    
-    if(isCart(cart)) {
-        cart.map((item) => mapOf.push(item.quantity))
+        return ((cart as CartLine[]).map((item) => item.quantity) !== undefined);
     }
-    console.log("mapOf.length", mapOf)
+    
+    if (isCart(cart)) {
+        cart.map((item) => mapOf.push(item.quantity))
+        cart.map((item) => quantity.push(item.quantity))
+    }
+    for(let i = 0; i < mapOf.length; i++){
+        cartQauntity += quantity[i]
+    }
+
+
+    console.log("mapOf.length", cartQauntity)
     return mapOf.length
 }
