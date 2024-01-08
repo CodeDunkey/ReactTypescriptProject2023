@@ -13,11 +13,11 @@ export function CartInventory({ cart }: any) {
         cart.map((item) => mapOf.push(item.quantity))
         cart.map((item) => quantity.push(item.quantity))
     }
-    for(let i = 0; i < mapOf.length; i++){
+    for(let i = 0; i < quantity.length; i++){
         cartQauntity += quantity[i]
     }
 
 
     console.log("mapOf.length", cartQauntity)
-    return mapOf.length
+    return cartQauntity
 }
