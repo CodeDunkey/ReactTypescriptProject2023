@@ -1,3 +1,4 @@
+
 export interface Product {
     individualRandomNr: number
     id: number
@@ -79,5 +80,12 @@ export const productList: Product[] = [
     },
 ];
 
-export type SetFunction = React.Dispatch<React.SetStateAction<Product[]>>;
+export type SetFunction = (product: Product) => void;
 export type FindAndRemoveFromCartFun = (param: number) => void;
+
+export interface CartLine {
+    itemId: number,
+    quantity: number,
+}
+
+export const cartTotal: CartLine[] = [] 

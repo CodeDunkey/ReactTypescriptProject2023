@@ -43,14 +43,14 @@ export class API2 extends Component<{}, Loading, Spinner>{
     
   }
   updateCart() {
-    console.log('Cart needs to update');
+    // console.log('Cart needs to update');
   }
     
   render(){
     return(
       <>
         <button onClick={this.handleBuyButtonClick.bind(this)}>API2</button>
-        {console.log("showing the rendered state", this.state.isLoading)}
+        {/* {console.log("showing the rendered state", this.state.isLoading)} */}
         {(this.state.isLoading)&&(this.spinnerIcon.showSpinner())}    
       </>
     )
@@ -95,86 +95,104 @@ export const SpinnerSiteRefresh: React.FC<SpinnerProps> = () => {
   )
 }
 //#endregion
-interface SpinnerBuy {
-  showSpinner: ()=> void,
-}
-interface LoadingBuy {
-  isNowLoading: boolean,
-  afterLoading: boolean,
-}
-export class SimulateServerCall extends Component<{}, LoadingBuy, SpinnerBuy>{
-  private showSpinner = {
-    showSpinner: () => SpinnerLoadingIcon(),
-  }
-  constructor(props: any){
-    super(props)
 
-    this.state = {
-      isNowLoading: false,
-      afterLoading: false,
-    };
+//#region // Spinner Buy Button
+// interface SpinnerBuy {
+//   showSpinner: ()=> void,
+// }
+// interface LoadingBuy {
+//   isNowLoading: boolean,
+//   afterLoading: boolean,
+// }
+// export class SimulateServerCall extends Component<{}, LoadingBuy, SpinnerBuy>{
+//   private showSpinner = {
+//     showSpinner: () => SpinnerLoadingIcon(),
+//   }
+//   constructor(props: any){
+//     super(props)
 
-    // console.log(this.state.isNowLoading)
-  }
+//     this.state = {
+//       isNowLoading: false,
+//       afterLoading: false,
+//     };
 
-  handleBuyButtonClick({cart, item, setCart}: {cart: Product[], item: Product, setCart: SetFunction }){
+//     // console.log(this.state.isNowLoading)
+//   }
+
+//   // handleBuyButtonClick(){
     
     
-    this.setState({
-      isNowLoading: true,
-    })
+//   //   this.setState({
+//   //     isNowLoading: true,
+//   //   })
     
-    console.log("works", this.state.isNowLoading)
+//   //   console.log("works", this.state.isNowLoading)
 
-    this.showSpinner.showSpinner()
+//   //   this.showSpinner.showSpinner()
     
-    setTimeout(()=>{
-      this.setState({
-        isNowLoading: false,
-      })
-      console.log("setTimeout works", this.state.isNowLoading)
-    }, 3000);
+//   //   setTimeout(()=>{
+//   //     this.setState({
+//   //       isNowLoading: false,
+//   //     })
+//   //     console.log("setTimeout works", this.state.isNowLoading)
+//   //   }, 3000);
 
-    this.setState({
-      afterLoading: true,
-    })
+//   //   this.setState({
+//   //     afterLoading: true,
+//   //   })
 
     
 
-    console.log("still works", this.state.isNowLoading)
-    if(this.state.afterLoading == true){
-      this.AddToCart({cart, item, setCart});
+//   //   console.log("still works", this.state.isNowLoading)
+//   //   if(this.state.afterLoading == true){
+//   //     // this.AddToCart({cart, item, setCart});
 
-      this.setState({
-        afterLoading: false,
-      })
-    }
-  }
+//   //     this.setState({
+//   //       afterLoading: false,
+//   //     })
+//   //   }
+//   // }
   
-  AddToCart({cart, item, setCart}: {cart: Product[], item: Product, setCart: SetFunction }){
+//   handleBuyButtonClick(){
     
-    const updatedCart = [...cart, item];
-    item.stock--;
-    setCart(updatedCart);
-    
-  }
-  SubtractFromCart({cart, item, removeFromCart}: {cart: Product[], item: Product, removeFromCart: FindAndRemoveFromCartFun}){
-    item.stock++;
-    removeFromCart(item.individualRandomNr);
-    
-  }
+//     // console.log("works", this.state.isNowLoading)
   
-  render(){
-    return(
-      <>
-        {/* <button onClick={this.handleBuyButtonClick.bind(this)}>api server call</button> */}
-        {(this.state.isNowLoading)&&(this.showSpinner.showSpinner())}
-        {console.log("showing the rendered 'SimulateServerCall' state: ", this.state.isNowLoading)}
-      </>
-    )
-  }
-}
-export const webAPIhandleBuy = new SimulateServerCall({});
+//     console.log("spinner here!!!")
+//     // setTimeout(()=>{
+//     //   // this.setState({
+//     //   //   isNowLoading: false,
+//     //   // })
+//     //   console.log("setTimeout works")
+//     // }, 2000);
+
+//   }
+  
+  
+
+//   // AddToCart({cart, item, setCart}: {cart: Product[], item: Product, setCart: SetFunction }){
+//   //   // lav en await
+//   //   const updatedCart = [...cart, item];
+//   //   item.stock--;
+//   //   setCart(updatedCart);
+//   // }
+//   // SubtractFromCart({cart, item, removeFromCart}: {cart: Product[], item: Product, removeFromCart: FindAndRemoveFromCartFun}){
+//   //   item.stock++;
+//   //   removeFromCart(item.individualRandomNr);
+//   // }
+  
+//   render(){
+//     return(
+//       <>
+//         {/* <button onClick={this.handleBuyButtonClick.bind(this)}>api server call</button> */}
+//         {(this.state.isNowLoading)&&(this.showSpinner.showSpinner())}
+//         {console.log("showing the rendered 'SimulateServerCall' state: ", this.state.isNowLoading)}
+//       </>
+//     )
+//   }
+// }
+// export const webAPIhandleBuy = new SimulateServerCall({});
+
+//#endregion
 
 // {item, cart}: {item: Product, cart: Product[]}
     // console.log("AddToCart is passed", item.model);

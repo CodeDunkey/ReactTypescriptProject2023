@@ -7,9 +7,9 @@ import Banner from './Banner/Banner'
 import ProductViewBottom from './ProductViewBottom/ProductViewBottom'
 // import { CartType, SetCartType } from '../../Hooks/useState'
 import './Main.scss'
-import { Product, SetFunction, FindAndRemoveFromCartFun} from '../../Data/ProductList'
+import { Product, CartLine, SetFunction, FindAndRemoveFromCartFun} from '../../Data/ProductList'
 
-export default function Main({cart, setCart, removeFromCart}: {cart:Product[], setCart: SetFunction, removeFromCart: FindAndRemoveFromCartFun}){
+export default function Main({cart, addToCart, removeFromCart}: {cart:CartLine[], addToCart: SetFunction, removeFromCart: FindAndRemoveFromCartFun}){
 
     // CartType SetCartType
     //    console.log("setcart in main: ", typeof setcart)
@@ -21,7 +21,7 @@ export default function Main({cart, setCart, removeFromCart}: {cart:Product[], s
             {/* <ProductViewTop /> */}
             {/* <SeriesOption /> */}
             {/* <Banner /> */}
-            <ProductViewBottom  cart={cart} setCart={setCart} removeFromCart={removeFromCart}/>
+            <ProductViewBottom  cart={cart} addToCart={addToCart} removeFromCart={removeFromCart}/>
         </div>
     )
 }

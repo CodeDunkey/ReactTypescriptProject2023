@@ -5,26 +5,17 @@ import {API2}  from "../APISimulate/ClassTimer"
 import './Site.scss'
 import React, { useState } from "react"
 import { Product } from "../../Data/ProductList"
+import { useCart } from "../../Hooks/use-cart"
 
 export default function Site() {
-    const [cart, setCart] = useState<Product[]>([]);
-    const removeFromCart = (param: number) => {
-        const findInCart = cart.find(findRandomNr => findRandomNr.individualRandomNr === param)
-        
-        if (findInCart !== undefined) {
-            const cartIndex = cart.indexOf(findInCart);
-            const cartSlice1 = cart.slice(0, cartIndex);
-            const cartSlice2 = cart.slice(cartIndex + 1, cart.length);
-            const concatCart = cartSlice1.concat(cartSlice2);
-            setCart(concatCart);
-        }
-    }
+    const { cart, addToCart, removeFromCart } = useCart();
+    console.log("totalCart", cart)
     return (
         <div className="siteWrapper">
             <Header cart={cart} />
-            <Main cart={cart} setCart={setCart} removeFromCart={removeFromCart} />
+            <Main cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} />
             {/* <Footer /> */}
-            <API2 />
+            {/* <API2 /> */}
         </div>
     )
 }

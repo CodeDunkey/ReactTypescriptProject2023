@@ -3,9 +3,9 @@ import Menu from './Menu/Menu'
 import TextArea from '../TextArea/TextArea'
 import { CartInventory } from './CartInventory'
 import { CartTotalPrice } from './CartTotalPrice'
-import { Product } from '../../Data/ProductList'
+import { CartLine, Product } from '../../Data/ProductList'
 
-export default function Header({cart}: any){
+export default function Header({cart}: {cart: CartLine[]}){
         return(
         <div className='headerWrapper'>
             <TextArea />
@@ -14,8 +14,8 @@ export default function Header({cart}: any){
                 <div className='logoCartWrapper'>
                     <div className='logo'></div>
                     <div className='cartWrapper'>
-                    <CartInventory cart={cart} />
-                    <CartTotalPrice cart={cart}/>
+                    <div style={{color: "red"}}>Cart: {CartInventory({cart})}</div> 
+                    {/* <div  style={{color: "red"}}>Total Price: {CartTotalPrice({cart})}</div> */}
                     </div>
                 </div>
             </div>
@@ -23,3 +23,5 @@ export default function Header({cart}: any){
         </div>
     )
 }
+
+// her skal CartTotalPrice renderes

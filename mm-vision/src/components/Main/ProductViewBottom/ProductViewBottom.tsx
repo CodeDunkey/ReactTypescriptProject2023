@@ -1,16 +1,16 @@
 import '../Main.scss'
 import Button from '../../Button/Button';
-import {CartInventory} from '../../Header/CartInventory';
-import { FunctionExpression } from 'typescript';
-import { productList, Product, SetFunction, FindAndRemoveFromCartFun} from '../../../Data/ProductList'
-import { webAPIhandleBuy } from '../../APISimulate/ClassTimer';
+import { productList, Product, CartLine, SetFunction, FindAndRemoveFromCartFun} from '../../../Data/ProductList';
 import { HandleStock } from '../../../Data/HandleStock';
-import { SimulateServerCall } from '../../APISimulate/ClassTimer';
 
-export default function ProductViewBottom({cart, setCart, removeFromCart}: {cart: Product[], setCart: SetFunction, removeFromCart: FindAndRemoveFromCartFun}){
+export default function ProductViewBottom({cart, addToCart, removeFromCart}: {cart: CartLine[], addToCart: SetFunction, removeFromCart: FindAndRemoveFromCartFun}){
        
     
+
+
     const listSlice = productList.slice(3, 6)
+ 
+    // render classen 
  
     // let showRemoveButtonAfterReservation = () => {
         
@@ -18,17 +18,18 @@ export default function ProductViewBottom({cart, setCart, removeFromCart}: {cart
         
         const product = listSlice.map((item: Product) => {
             
-            const api = webAPIhandleBuy;
+            // const api = webAPIhandleBuy;
             
-            console.log("cart hold: ", cart)
-            let findCart = cart.find(isItem => isItem.individualRandomNr == item.individualRandomNr)
+            
+            let findCart = cart.find(isItem => isItem.itemId == item.id)
             let show: boolean = false;
-            
             if (findCart){
                 show = true;
             }
+
             // her skal være en boolean for om item antal er 0 i cart eller ej 
-            // if(buyButtonPushedAmountOfTimes > 0){
+            
+            // if(buyButtonPushed){
             //     show = true;
             // }
             
@@ -36,12 +37,8 @@ export default function ProductViewBottom({cart, setCart, removeFromCart}: {cart
             <div className='productViewBottom'>
                 {item.type}___{item.model}___Price: {item.price}
                 {HandleStock(item)}
-                <SimulateServerCall />
-                <Button backgroundColor='green' text="Køb" on_click={() => webAPIhandleBuy.handleBuyButtonClick({cart, item, setCart}) }/>
-                {show && <Button backgroundColor='red' text="fjern" on_click={()=> webAPIhandleBuy.SubtractFromCart({cart, item, removeFromCart})}/>}
-                {webAPIhandleBuy.render()}
-                {/*  */}
-                {/*  */}
+                <Button backgroundColor='green' text="Køb" on_click={() => {addToCart(item)}}/>
+                {show && <Button backgroundColor='red' text="fjern" on_click={()=> {removeFromCart(item.id)}}/>}
             </div>
         )
     })

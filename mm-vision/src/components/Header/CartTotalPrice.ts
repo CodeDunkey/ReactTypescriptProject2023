@@ -7,5 +7,5 @@ export function CartTotalPrice({ cart }: { cart: Product[]}) {
     for(let i = 0; i < price.length; i++){
         totalPrice += price[i];}
 
-    return (<div  style={{color: "red"}}>Total Price: {totalPrice}</div>)
+    return totalPrice
 }
