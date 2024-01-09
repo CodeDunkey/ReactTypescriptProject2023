@@ -38,7 +38,7 @@ export default function ProductViewBottom({cart, addToCart, removeFromCart}: {ca
                 {item.type}___{item.model}___Price: {item.price}
                 {HandleStock(item)}
                 <Button backgroundColor='green' text="Køb" on_click={() => {addToCart(item)}}/>
-                {show && <Button backgroundColor='red' text="fjern" on_click={()=> {removeFromCart(item.id)}}/>}
+                {show && <Button backgroundColor='red' text="fjern" on_click={()=> {removeFromCart(item)}}/>}
             </div>
         )
     })

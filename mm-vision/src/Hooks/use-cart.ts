@@ -13,8 +13,8 @@ export const useCart = () => {
         setCart(cartLine);
     }
 
-    const removeFromCart = (productId: number) => {
-        let cart = webApi.removeFromCart(productId);
+    const removeFromCart = (product: Product) => {
+        let cart = webApi.removeFromCart(product);
         setCart(cart);
     }
     

@@ -15,7 +15,7 @@ export default function Header({cart}: {cart: CartLine[]}){
                     <div className='logo'></div>
                     <div className='cartWrapper'>
                     <div style={{color: "red"}}>Cart: {CartInventory({cart})}</div> 
-                    {/* <div  style={{color: "red"}}>Total Price: {CartTotalPrice({cart})}</div> */}
+                    <div  style={{color: "red"}}>Total Price: {CartTotalPrice({cart})}</div>
                     </div>
                 </div>
             </div>

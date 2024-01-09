@@ -81,7 +81,7 @@ export const productList: Product[] = [
 ];
 
 export type SetFunction = (product: Product) => void;
-export type FindAndRemoveFromCartFun = (param: number) => void;
+export type FindAndRemoveFromCartFun = (param: Product) => void;
 
 export interface CartLine {
     itemId: number,
