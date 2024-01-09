@@ -1,9 +1,14 @@
 .mainPictureSlideContainer {
-    display: block;
+    display: flex;
+    flex-direction: column;
     position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
     
     .mySlides{
-        // display: none;
+        display: none;
+        border-radius: 0.5rem;
     }
     .block{
         display: block;
@@ -41,7 +46,7 @@
         right: 10%;
     .sliderDot {
         cursor: pointer;
-        // border: 2px solid yellow;
+        border: 2px solid yellow;
         height: 10px;
         width: 10px;
         margin: 0 2px;

@@ -1,43 +1,44 @@
 import './MainPictureSlide.scss'
 export default function MainPicture() {
     let slideIndex: number = 1;
-    showSlides(slideIndex);
+    
     
     // function plusSlides(n: number) {
     //     showSlides(slideIndex += n);
     // }
     
     function currentSlide(n: number) {
-        console.log(n)
         showSlides(slideIndex = n);
     }
     
     function showSlides(n: number) {
         let i;
         
+        console.log(n)
         let slides = document.getElementsByClassName("mySlides");
-        
-        console.log("slides: ", slides.length)
+
         let dots = document.getElementsByClassName("sliderDot");
-        console.log("dots: ", dots.item)
-        if (n > slides.length) { slideIndex = 1 }
+        // if (n > slides.length) { slideIndex = 1 }
         
-        if (n < 1) { slideIndex = slides.length }
+        // if (n < 1) { slideIndex = slides.length }
         
-        for (i = 0; i < slides.length; i++) {
-            // console.log(slides)
-            slides[i].className = "block";
-        }
+        const findSlider = 
+
+        // for (i = 0; i < slides.length; i++) {
+        //     // console.log(slides)
+        //     slides[i].className = "block";
+        // }
         
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-        }
+        // for (i = 0; i < dots.length; i++) {
+        //     dots[i].className = dots[i].className.replace(" active", "");
+        // }
         
         // slides[slideIndex - 1].className = "block";
         
         // dots[slideIndex - 1].className += " active";
     }
 
+    showSlides(slideIndex);
 
 
 
