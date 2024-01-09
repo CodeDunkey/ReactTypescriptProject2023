@@ -4,40 +4,43 @@
     position: relative;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 1170px;
+    height: 1500px;
     
     .mySlides{
-        display: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         border-radius: 0.5rem;
+        
+        .image {
+            // position: absolute;
+            background-size: cover;
+            height: 468px;
+            width: 1140px;
+        }
+    
+        // .imageTwo {
+        //     // position: absolute;
+        //     background-image: url("../../../Assets/nySlidePict2.png");
+        //     background-size: cover;
+        //     height: 468px;
+        //     width: 1140px;
+        // }
+    
+        // .imageThree {
+        //     // position: absolute;
+        //     background-image: url("../../../Assets/nySlidePict3.png");
+        //     background-size: cover;
+        //     height: 468px;
+        //     width: 1140px;
+        // }
     }
     .block{
         display: block;
     }
     .none{
         display: none;
-    }
-    .imageOne {
-        // position: absolute;
-        background-image: url("../../../Assets/nySlidePict1.png");
-        background-size: cover;
-        height: 468px;
-        width: 1140px;
-    }
-
-    .imageTwo {
-        // position: absolute;
-        background-image: url("../../../Assets/nySlidePict2.png");
-        background-size: cover;
-        height: 468px;
-        width: 1140px;
-    }
-
-    .imageThree {
-        // position: absolute;
-        background-image: url("../../../Assets/nySlidePict3.png");
-        background-size: cover;
-        height: 468px;
-        width: 1140px;
     }
     .sliderDotWrapper{
         display: flex;
