@@ -1,0 +1,57 @@
+.mainPictureSlideContainer {
+    display: block;
+    position: relative;
+    
+    .mySlides{
+        // display: none;
+    }
+    .block{
+        display: block;
+    }
+    .none{
+        display: none;
+    }
+    .imageOne {
+        // position: absolute;
+        background-image: url("../../../Assets/nySlidePict1.png");
+        background-size: cover;
+        height: 468px;
+        width: 1140px;
+    }
+
+    .imageTwo {
+        // position: absolute;
+        background-image: url("../../../Assets/nySlidePict2.png");
+        background-size: cover;
+        height: 468px;
+        width: 1140px;
+    }
+
+    .imageThree {
+        // position: absolute;
+        background-image: url("../../../Assets/nySlidePict3.png");
+        background-size: cover;
+        height: 468px;
+        width: 1140px;
+    }
+    .sliderDotWrapper{
+        display: flex;
+        position: absolute;
+        bottom: 10%;
+        right: 10%;
+    .sliderDot {
+        cursor: pointer;
+        // border: 2px solid yellow;
+        height: 10px;
+        width: 10px;
+        margin: 0 2px;
+        background-color: #444;
+        border-radius: 50%;
+        display: inline-block;
+        
+    }
+    .active, .sliderDot:hover{
+        background-color: #d20000;
+    }
+    }
+}

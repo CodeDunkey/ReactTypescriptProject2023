@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import MainPicture from './MainPicture/MainPicture'
+import MainPicture from './MainPictureSlide/MainPicture'
 import ProductViewTop from './ProductViewTop/ProductViewTop'
 import InfoBar from './InfoBar/InfoBar'
 import SeriesOption from './SeriesOption/SeriesOption'
@@ -16,12 +16,12 @@ export default function Main({cart, addToCart, removeFromCart}: {cart:CartLine[]
    
     return(
         <div className='main'>
-            {/* <MainPicture /> */}
+            <MainPicture />
             {/* <InfoBar /> */}
             {/* <ProductViewTop /> */}
             {/* <SeriesOption /> */}
             {/* <Banner /> */}
-            <ProductViewBottom  cart={cart} addToCart={addToCart} removeFromCart={removeFromCart}/>
+            {/* <ProductViewBottom  cart={cart} addToCart={addToCart} removeFromCart={removeFromCart}/> */}
         </div>
     )
 }

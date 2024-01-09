@@ -9,10 +9,10 @@ import { useCart } from "../../Hooks/use-cart"
 
 export default function Site() {
     const { cart, addToCart, removeFromCart } = useCart();
-    console.log("totalCart", cart)
+    // console.log("totalCart", cart)
     return (
         <div className="siteWrapper">
-            <Header cart={cart} />
+            {/* <Header cart={cart} /> */}
             <Main cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} />
             {/* <Footer /> */}
             {/* <API2 /> */}

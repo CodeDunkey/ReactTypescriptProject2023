@@ -1,17 +1,12 @@
-.main{
-    background-color: black;
-    border: 0.5px solid yellow;
-    width: 1170px;
+.main {
+    // background-color: black;
+    // border: 0.5px solid yellow;
+    width: 1140px;
     height: 1567px;
 
-    .mainPicture{
-        background-image: url("../Main/MainPicture/SkærmbilledeAvatar.png");
-        background-size: cover;
-        height: 468px;
-        width: 100%;
-    }
+    
 
-    .infoBarTop{
+    .infoBarTop {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -26,12 +21,13 @@
         border-radius: 4px;
     }
 
-    .productViewTopWrapper{
+    .productViewTopWrapper {
         border: 0.5px solid red;
         display: flex;
-        .productViewTop{
+
+        .productViewTop {
             display: flex;
-            
+
             // justify-content: center;
             // align-items: center;
             // background-image: url("./pc.png");
@@ -39,19 +35,19 @@
             background-repeat: no-repeat;
             height: 240px;
             width: 380px;
-            margin-left:auto;
+            margin-left: auto;
             margin-right: auto;
         }
     }
 
-    .seriesOptionWrapper{
+    .seriesOptionWrapper {
         display: flex;
         height: 40px;
         width: 1140px;
-        
+
     }
 
-    .banner{
+    .banner {
         display: flex;
         align-items: center;
         height: 56px;
@@ -60,14 +56,16 @@
         color: aliceblue;
         background-image: linear-gradient(180deg, #454545, #282727);
     }
-    .productViewbottomWrapper{
+
+    .productViewbottomWrapper {
         border: 0.5px solid purple;
         display: flex;
         flex-wrap: wrap;
 
         height: 660px;
         width: 1180px;
-        .productViewBottom{
+
+        .productViewBottom {
             border: 0.5px solid orange;
             display: flex;
             flex-direction: column;

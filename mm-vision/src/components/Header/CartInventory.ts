@@ -16,6 +16,5 @@ export function CartInventory({ cart }: any) {
     for(let i = 0; i < mapOf.length; i++){
         cartQauntity += mapOf[i]
     }
-
-    return cartQauntity
+    if(cartQauntity > 0)return cartQauntity
 }

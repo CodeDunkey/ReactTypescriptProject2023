@@ -9,7 +9,7 @@ export const useCart = () => {
     const addToCart = (item: Product) => {
         
         let cartLine = webApi.addToCart(item);
-        console.log("cartLine", cartLine)
+        // console.log("cartLine", cartLine)
         setCart(cartLine);
     }
 

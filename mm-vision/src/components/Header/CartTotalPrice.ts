@@ -1,11 +1,23 @@
-import { Product, CartLine } from "../../Data/ProductList";
+import { Product, productList, CartLine } from "../../Data/ProductList";
 
 export function CartTotalPrice({ cart }: { cart: CartLine[]}) {
-    const price = cart.map((item) => item.quantity)
-    let totalPrice: number = 0; 
     
-    for(let i = 0; i < price.length; i++){
-        totalPrice += price[i];}
+    let totalPrice: Array<number> = []
+    let showPrice: number = 0;
 
-    return totalPrice
+    totalPrice = [];
+    const cartId = cart.map(item => {
+        productList.forEach(prod => {
+            if(prod.id === item.itemId){
+                totalPrice.push(prod.price*item.quantity)
+            }
+        })
+    })
+    
+    if(totalPrice){
+    for(let i = 0; i < totalPrice.length; i++){
+        showPrice += totalPrice[i]
+    }}
+   
+    if(showPrice > 0)return showPrice
 }
