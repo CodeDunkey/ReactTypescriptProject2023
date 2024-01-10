@@ -2,7 +2,7 @@ import './MainPictureSlide.scss'
 import { ShowSliderPicturesArray } from './MainSliderPictures';
 
 export default function MainPicture() {
-    // let slideIndex: number = 1;
+    let slideIndex: number = 1;
 
 
     // // function plusSlides(n: number) {
@@ -12,34 +12,35 @@ export default function MainPicture() {
     //     showSlides(slideIndex = n);
     // }
     
-    // function showSlides(n: number) {
-    //     // let i;
+    function showSlides(n: number) {
+        let i;
         
-    //     // console.log(n)
-    //     // let slides = document.getElementsByClassName("mySlides");
+        console.log(n)
+        let slides = document.getElementsByClassName("mySlides");
 
-    //     // let dots = document.getElementsByClassName("sliderDot");
-    //     // // if (n > slides.length) { slideIndex = 1 }
+        let dots = document.getElementsByClassName("sliderDot");
+        // if (n > slides.length) { slideIndex = 1 }
         
-    //     // if (n < 1) { slideIndex = slides.length }
+        if (n < 1) { slideIndex = slides.length }
 
-    //     // const findPict = slides
+        const findPict = slides
         
-    //     // for (i = 0; i < slides.length; i++) {
-    //     //     // console.log(slides)
-    //     //     slides[i].className = "block";
-    //     // }
+        for (i = 0; i < slides.length; i++) {
+            // console.log(slides)
+            slides[i].className = "block";
+        }
 
-    //     // for (i = 0; i < dots.length; i++) {
-    //         //     dots[i].className = dots[i].className.replace(" active", "");
-    //         // }
+        for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
             
-    //         // slides[slideIndex - 1].className = "block";
+            slides[slideIndex - 1].className = "block";
             
-    //         // dots[slideIndex - 1].className += " active";
-    // }
+            dots[slideIndex - 1].className += " active";
+    }
     
-    // showSlides(slideIndex);
+    showSlides(slideIndex);
+    
     const slidePictures = ShowSliderPicturesArray.map(pict => { 
         return(
             <div className='mySlides'>
