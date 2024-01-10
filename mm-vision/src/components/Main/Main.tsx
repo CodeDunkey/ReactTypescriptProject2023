@@ -21,7 +21,7 @@ export default function Main({cart, addToCart, removeFromCart}: {cart:CartLine[]
             {/* <ProductViewTop /> */}
             {/* <SeriesOption /> */}
             {/* <Banner /> */}
-            {/* <ProductViewBottom  cart={cart} addToCart={addToCart} removeFromCart={removeFromCart}/> */}
+            <ProductViewBottom  cart={cart} addToCart={addToCart} removeFromCart={removeFromCart}/>
         </div>
     )
 }

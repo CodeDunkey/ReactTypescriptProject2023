@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { Product, CartLine } from "../../Data/ProductList";
 
-export function CartInventory({ cart }: any) {
+export function cartInventory({ cart }: any) {
     let mapOf: Array<number> = [];
     // let quantity: Array<number> = [];
     let cartQauntity: number = 0;

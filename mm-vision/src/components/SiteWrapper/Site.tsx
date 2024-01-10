@@ -12,7 +12,7 @@ export default function Site() {
     // console.log("totalCart", cart)
     return (
         <div className="siteWrapper">
-            {/* <Header cart={cart} /> */}
+            <Header cart={cart} />
             <Main cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} />
             {/* <Footer /> */}
             {/* <API2 /> */}

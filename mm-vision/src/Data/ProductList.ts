@@ -88,4 +88,4 @@ export interface CartLine {
     quantity: number,
 }
 
-export const cartTotal: CartLine[] = [] 
+// export const cartTotal: CartLine[] = [] 

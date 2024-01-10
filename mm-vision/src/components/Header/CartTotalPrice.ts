@@ -1,6 +1,6 @@
 import { Product, productList, CartLine } from "../../Data/ProductList";
 
-export function CartTotalPrice({ cart }: { cart: CartLine[]}) {
+export function cartTotalPrice({ cart }: { cart: CartLine[]}) {
     
     let totalPrice: Array<number> = []
     let showPrice: number = 0;

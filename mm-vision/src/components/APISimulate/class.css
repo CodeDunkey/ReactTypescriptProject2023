@@ -24,11 +24,6 @@
     pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .spinner-icon {
-        animation: logo-spin infinite 1.5s steps(256);
-    }
-}
 
 .spinner-icon {
     /* background-color: #282c34; */
@@ -40,11 +35,11 @@
     font-size: calc(10px + 2vmin);
     color: white;
 }
-
-.App-link {
-    color: #61dafb;
+@media (prefers-reduced-motion: no-preference) {
+    .spinner-icon {
+        animation: logo-spin infinite 1.5s steps(256);
+    }
 }
-
 @keyframes logo-spin {
     from {
         transform: rotate(0deg);
@@ -54,6 +49,11 @@
         transform: rotate(360deg);
     }
 }
+
+.App-link {
+    color: #61dafb;
+}
+
 
 .spinner {
     position: fixed;
