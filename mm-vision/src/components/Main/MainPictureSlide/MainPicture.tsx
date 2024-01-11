@@ -2,46 +2,40 @@ import { useEffect, useState } from 'react';
 import './MainPictureSlide.scss'
 import { ShowSliderPicturesArray } from './MainSliderPictures';
 
-// let slideIndex: number;
 export default function MainPicture() {
 
     const [pictureNumber, setPictureNumber] = useState(1)
-    // function plusSlides(n: number) {
-    //     showSlides(slideIndex += n);
-    // }
-    // showSlides2()
+
 
     function currentSlide(para: number) {
         setPictureNumber(para)
     }
 
+    
+    const find = (pictureNumber: number) => {
+        if (pictureNumber < ShowSliderPicturesArray.length) {
+            return pictureNumber + 1
+        }
+        return 1
+    }
+    
     function showSlides() {
-        // showSlides2()
-        // let i;
-
-        
-        // let dots = document.getElementsByClassName("sliderDot");
-        // if (n > slides.length) { slideIndex = 1 }
-
-        // if (n < 1) { slideIndex = slides.length }
-        
-
-        // for (i = 0; i < slides.length; i++) {
-            //     console.log(slides)
-        //     slides[i].className = "none";
-        // }
-
-        // for (i = 0; i < dots.length; i++) {
-        //     // dots[i].className = dots[i].className.replace(" active", "");
-        // }
-        
-        
         
         // dots[slideIndex - 1].className += " active";
-        // Change image every 2 seconds
-        const findPicture = ShowSliderPicturesArray.find(findPict => findPict.id === pictureNumber)
-        const pictures =    <div className='mySlides'>
-                <img className='image' key={findPicture?.id} style={{ backgroundImage: `url(${findPicture?.src})`, backgroundSize: findPicture?.pictureSize }}></img>
+        
+        const findCurrentPicture = ShowSliderPicturesArray.find(findPict => findPict.id === pictureNumber)
+        const findNextPicture = ShowSliderPicturesArray.find(findPict => findPict.id === find(pictureNumber))
+        console.log("pictureNumber", pictureNumber)
+        console.log("findNextPicturePictureNumber", pictureNumber)
+
+        // console.log("findCurrentPicture", findCurrentPicture)
+        // console.log("findNextPicture", findNextPicture)
+        const pictures =
+            <div className='mySlides'>
+                <div className='imageWrapper'>
+                    <div className='image currentPicture' key={findCurrentPicture?.id} style={{ backgroundImage: `url(${findCurrentPicture?.src})`, backgroundSize: findCurrentPicture?.pictureSize }}></div>
+                    <div className='image nextPicture' key={findNextPicture?.id} style={{ backgroundImage: `url(${findNextPicture?.src})`, backgroundSize: findNextPicture?.pictureSize }}></div>
+                </div>
                 <div className='sliderDotWrapper'>
                     <div className='sliderDot' onClick={() => currentSlide(1)}></div>
                     <div className='sliderDot' onClick={() => currentSlide(2)}></div>
@@ -49,9 +43,10 @@ export default function MainPicture() {
                     {/* <button onClick={()=> {showSlides2()}}>timer</button> */}
                 </div>
             </div>;
-            let slides = document.querySelectorAll("image");
-            console.log(slides)
-            slides[pictureNumber - 1].classList.add(' currentPicture');
+
+        // console.log("pictureNumber: ", pictureNumber)
+        // console.log("findNextPicturePictureNumber(): ", findNextPicturePictureNumber())
+
         return pictures
     }
     showSlides()
@@ -64,54 +59,12 @@ export default function MainPicture() {
                 }
                 return 1
             })
+        }, 2900);
 
-        }, 3000);
         console.log("interval", interval)
         return () => clearInterval(interval)
     })
 
-    // function showSlides2() {
-    //     // para: boolean
-    //     let slideIndex2: number = 1;
-
-    //     slideIndex2 = pictureNumber;
-
-    //     const timeout = setTimeout((() => {
-    //         console.log("timer works")
-    //         setPictureNumber(slideIndex2)}
-    //         ), 2000);
-
-    //     // slideIndex2++;
-
-    //     if (slideIndex2 > ShowSliderPicturesArray.length) { slideIndex2 = 1 }
-
-    //     // if(para){
-    //     //     clearTimeout(timeout)
-    //     //     console.log("clearTimeout", clearTimeout)
-    //     // }
-    //     // console.log("timeout", timeout)
-    //     // clearTimeout(timeout)
-    //     // let i;
-    //     // let slides = document.getElementsByClassName("mySlides");
-    //     // let dots = document.getElementsByClassName("dot");
-    //     // for (i = 0; i < slides.length; i++) {
-    //     //     slides[i].style.display = "none";
-    //     // }
-    //     // slideIndex++;
-    //     // if (slideIndex > slides.length) { slideIndex = 1 }
-    //     // for (i = 0; i < dots.length; i++) {
-    //     //     dots[i].className = dots[i].className.replace(" active", "");
-    //     // }
-    //     // slides[slideIndex - 1].style.display = "block";
-    //     // dots[slideIndex - 1].className += " active";
-    //     // setTimeout(showSlides, 8000); // Change image every 2 seconds
-    // }
-
-
-
-
-
-    // console.log("slidePictures", slidePictures)
 
     return (
         <div className="mainPictureSlideContainer">
@@ -119,7 +72,3 @@ export default function MainPicture() {
         </div>
     )
 }
-
-//
-//
-// 
