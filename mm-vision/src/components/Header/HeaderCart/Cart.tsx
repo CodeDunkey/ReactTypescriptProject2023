@@ -5,7 +5,9 @@ import { CartLine } from '../../../Data/ProductList'
 export const Cart = ({ cart }: { cart: CartLine[] }) => {
     return (
         <div className='headerWrapperCart'>
-            <div className='picture'></div>
+            <div className='pictureWrapper'>
+                <div className='picture'></div>
+            </div>
             <div className='logoCartWrapper'>
                 <div className='logo'></div>
                 <div className='cartWrapper'>
