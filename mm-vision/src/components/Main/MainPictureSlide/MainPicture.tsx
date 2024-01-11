@@ -12,37 +12,35 @@ export default function MainPicture() {
     // showSlides2()
 
     function currentSlide(para: number) {
-        setPictureNumber(para)        
+        setPictureNumber(para)
     }
 
     function showSlides() {
         // showSlides2()
         // let i;
-        
-        // let slides = document.getElementsByClassName("mySlides");
+
         
         // let dots = document.getElementsByClassName("sliderDot");
         // if (n > slides.length) { slideIndex = 1 }
-        
+
         // if (n < 1) { slideIndex = slides.length }
         
-        
+
         // for (i = 0; i < slides.length; i++) {
             //     console.log(slides)
-            //     slides[i].className = "none";
-            // }
-            
-            // for (i = 0; i < dots.length; i++) {
-                //     // dots[i].className = dots[i].className.replace(" active", "");
-                // }
-                
-                // slides[slideIndex - 1].className = "block";
-                
-                // dots[slideIndex - 1].className += " active";
-                // Change image every 2 seconds
-                const findPicture = ShowSliderPicturesArray.find(findPict => findPict.id === pictureNumber)
-                return (
-                    <div className='mySlides'>
+        //     slides[i].className = "none";
+        // }
+
+        // for (i = 0; i < dots.length; i++) {
+        //     // dots[i].className = dots[i].className.replace(" active", "");
+        // }
+        
+        
+        
+        // dots[slideIndex - 1].className += " active";
+        // Change image every 2 seconds
+        const findPicture = ShowSliderPicturesArray.find(findPict => findPict.id === pictureNumber)
+        const pictures =    <div className='mySlides'>
                 <img className='image' key={findPicture?.id} style={{ backgroundImage: `url(${findPicture?.src})`, backgroundSize: findPicture?.pictureSize }}></img>
                 <div className='sliderDotWrapper'>
                     <div className='sliderDot' onClick={() => currentSlide(1)}></div>
@@ -50,38 +48,41 @@ export default function MainPicture() {
                     <div className='sliderDot' onClick={() => currentSlide(3)}></div>
                     {/* <button onClick={()=> {showSlides2()}}>timer</button> */}
                 </div>
-            </div>
-        )
+            </div>;
+            let slides = document.querySelectorAll("image");
+            console.log(slides)
+            slides[pictureNumber - 1].classList.add(' currentPicture');
+        return pictures
     }
     showSlides()
-    
-    const slideEffect = useEffect(()=> {
-        const interval = setInterval(()=> {
+
+    const slideEffect = useEffect(() => {
+        const interval = setInterval(() => {
             setPictureNumber((pictureNumber) => {
-                if(pictureNumber < ShowSliderPicturesArray.length){
+                if (pictureNumber < ShowSliderPicturesArray.length) {
                     return pictureNumber + 1
                 }
                 return 1
             })
 
-        },3000);
+        }, 3000);
         console.log("interval", interval)
-        return() => clearInterval(interval)
+        return () => clearInterval(interval)
     })
-    
+
     // function showSlides2() {
     //     // para: boolean
     //     let slideIndex2: number = 1;
-        
+
     //     slideIndex2 = pictureNumber;
-        
+
     //     const timeout = setTimeout((() => {
     //         console.log("timer works")
     //         setPictureNumber(slideIndex2)}
     //         ), 2000);
 
     //     // slideIndex2++;
-        
+
     //     if (slideIndex2 > ShowSliderPicturesArray.length) { slideIndex2 = 1 }
 
     //     // if(para){

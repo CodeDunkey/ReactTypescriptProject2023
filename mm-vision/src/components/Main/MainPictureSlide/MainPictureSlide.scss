@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 1170px;
+    width: 1140px;
     height: 500px;
     overflow: hidden;
 
@@ -22,14 +22,32 @@
         }
 
         @media (prefers-reduced-motion: no-preference) {
-            .image {
-                animation: slide  0.5s linear;
+            .currentPicture {
+                animation: slide 1s linear;
+                // animation-delay: 2s;
             }
         }
 
-        @keyframes slide {
+        @keyframes slide { 
             from {
-                transform:skewX(0%);
+                transform: translateX(100%);
+            }
+
+            to {
+                transform:  translateX(0%);
+            }
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+            .nextPicture {
+                animation: slide 1s linear;
+                animation-delay: 2s;
+            }
+        }
+
+        @keyframes slide { 
+            from {
+                transform: translateX(0%);
             }
 
             to {
