@@ -26,8 +26,7 @@
 
             @media (prefers-reduced-motion: no-preference) {
                 .currentPicture {
-                    animation: currentPicture 3s ease;
-                    // animation-delay: 2.5s;
+                    animation: currentPicture infinite 3000ms ease;
                 }
                 
 
@@ -53,19 +52,18 @@
 
             @media (prefers-reduced-motion: no-preference) {
                 .nextPicture {
-                    animation: nextPicture 3s ease;
-                    // animation-delay: 3s;
+                    animation: nextPicture infinite 3000ms ease;
                 }
             }
             @keyframes nextPicture {
                 
-                0% {
-                    transform: translateX(1140px);
-                }
+                // 0% {
+                //     transform: translateX(1140px);
+                // }
 
-                20% {
-                    transform: translateX(0px);
-                }
+                // 20% {
+                //     transform: translateX(0px);
+                // }
                 80% {
                     transform: translateX(0px);
                 }

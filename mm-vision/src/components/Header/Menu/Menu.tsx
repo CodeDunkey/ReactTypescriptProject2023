@@ -1,3 +1,5 @@
+import './HeaderMenu.scss'
+
 export default function Menu() {
     return (
         <div className='headerWrapperMenu'>

@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Product, CartLine } from "../../Data/ProductList";
+import { Product, CartLine } from "../../../Data/ProductList";
 
 export function cartInventory({ cart }: any) {
     let mapOf: Array<number> = [];

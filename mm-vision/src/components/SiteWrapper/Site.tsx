@@ -13,7 +13,7 @@ export default function Site() {
     return (
         <div className="siteWrapper">
             <Header cart={cart} />
-            <Main cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} />
+            {/* <Main cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} /> */}
             {/* <Footer /> */}
             {/* <API2 /> */}
         </div>
