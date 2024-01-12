@@ -34,7 +34,8 @@ class WebApi {
         return [...cart];
     }
 
-    getProducts = () => {
+    getProducts = async () => {
+        const products = await fetch("http://example.com/movies.json");
         return productList;
     }
 }

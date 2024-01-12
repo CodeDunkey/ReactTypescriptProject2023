@@ -1,11 +1,28 @@
 import classNames from "classnames"
 import './Button.scss'
 
-export default function Button({on_click=()=>{alert("no function yet")},text="Im A Button", backgroundColor=""}){
-    
+export enum Color {
+    GREEN = "green",
+    RED = "red",
+    SEARCH = "search"
+}
+
+interface ButtonProps {
+    onClick: () => void;
+    text: string;
+    backgroundColor: Color;
+}
+// const green: ButtonProps = {
+//     onClick: () =>{},
+//     text: "hello",
+//     backgroundColor: Color.GREEN
+// }
+
+export function Button({ onClick, text, backgroundColor}: ButtonProps){
+    console.log()
     const classNamesString = classNames(`button__${backgroundColor}`);
        
-    return(<button className={classNamesString} onClick={on_click}>{text}</button> )
+    return(<button className={classNamesString} onClick={onClick}>{text}</button> )
 }
 
 // var classNames = require('classnames');

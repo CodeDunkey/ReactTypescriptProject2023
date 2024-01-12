@@ -1,5 +1,5 @@
 import './Header.scss'
-import Menu from './Menu/Menu'
+import MenuAndSearchBar from './Menu/MenuAndSearchBar'
 import TextArea from './TextArea/TextArea'
 import { Cart } from './HeaderCart/Cart'
 import { CartLine } from '../../Data/ProductList'
@@ -9,7 +9,7 @@ export default function Header({cart}: {cart: CartLine[]}){
         <div className='headerWrapper'>
             <TextArea />
             <Cart cart={cart} />
-            <Menu />
+            <MenuAndSearchBar />
         </div>
     )
 }

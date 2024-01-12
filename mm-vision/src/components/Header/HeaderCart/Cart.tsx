@@ -1,3 +1,5 @@
+// Done
+
 import './HeaderCart.scss'
 import { cartInventory } from './CartInventory'
 import { cartTotalPrice } from './CartTotalPrice'
@@ -9,10 +11,13 @@ export const Cart = ({ cart }: { cart: CartLine[] }) => {
                 <div className='picture'></div>
             </div>
             <div className='logoCartWrapper'>
+                <div className='logoCartInner'>
+
                 <div className='logo'></div>
                 <div className='cartWrapper'>
-                    <div >Cart: {cartInventory({ cart })}</div>
-                    <div >Total Price: {cartTotalPrice({ cart })}</div>
+                    <div className='cartItem'>Indkøbskurv: <span className='cartData'>{cartInventory({ cart })}</span> varer</div>
+                    <div className='cartData'> {cartTotalPrice({ cart })} DKK</div>
+                </div>
                 </div>
             </div>
         </div>

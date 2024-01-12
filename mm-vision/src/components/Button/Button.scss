@@ -36,7 +36,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: aliceblue;
+    color: #fff;
     margin-left: 2px;
     margin-right: 2px;
     background-image: linear-gradient(180deg, #d10000, #8e0000);
@@ -50,7 +50,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: aliceblue;
+    color: #fff;
     margin-left: 2px;
     margin-right: 2px;
     background-image: linear-gradient(180deg, #00d131, #017722);
@@ -60,11 +60,11 @@
     border: 0;
 }
 
-.button__hidden{
+.button__search{
     display: flex;
     justify-content: center;
     align-items: center;
-    color: aliceblue;
+    color: #fff;
     margin-left: 2px;
     margin-right: 2px;
     visibility: hidden;

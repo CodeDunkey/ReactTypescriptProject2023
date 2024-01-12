@@ -25,8 +25,8 @@ export default function MainPicture() {
         
         const findCurrentPicture = ShowSliderPicturesArray.find(findPict => findPict.id === pictureNumber)
         const findNextPicture = ShowSliderPicturesArray.find(findPict => findPict.id === find(pictureNumber))
-        console.log("pictureNumber", pictureNumber)
-        console.log("findNextPicturePictureNumber", find(pictureNumber))
+        // console.log("pictureNumber", pictureNumber)
+        // console.log("findNextPicturePictureNumber", find(pictureNumber))
 
         // console.log("findCurrentPicture", findCurrentPicture)
         // console.log("findNextPicture", findNextPicture)
@@ -61,7 +61,7 @@ export default function MainPicture() {
             })
         }, 2950);
 
-        console.log("interval", interval)
+        // console.log("interval", interval)
         return () => clearInterval(interval)
     })
 

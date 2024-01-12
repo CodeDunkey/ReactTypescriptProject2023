@@ -1,3 +1,5 @@
+// Done
+
 import React, { useState } from "react"
 import { Product, CartLine } from "../../../Data/ProductList";
 
@@ -16,5 +18,6 @@ export function cartInventory({ cart }: any) {
     for(let i = 0; i < mapOf.length; i++){
         cartQauntity += mapOf[i]
     }
-    if(cartQauntity > 0)return cartQauntity
+    // if(cartQauntity > 0) 
+    return cartQauntity
 }

@@ -1,5 +1,5 @@
 import '../Main.scss'
-import Button from '../../Button/Button';
+import {Button, Color} from '../../Button/Button';
 import { productList, Product, CartLine, SetFunction, FindAndRemoveFromCartFun} from '../../../Data/ProductList';
 import { HandleStock } from '../../../Data/HandleStock';
 
@@ -33,12 +33,12 @@ export default function ProductViewBottom({cart, addToCart, removeFromCart}: {ca
             //     show = true;
             // }
             
-        return(
-            <div className='productViewBottom'>
+            return(
+                <div className='productViewBottom'>
                 {item.type}___{item.model}___Price: {item.price}
                 {HandleStock(item)}
-                <Button backgroundColor='green' text="Køb" on_click={() => {addToCart(item)}}/>
-                {show && <Button backgroundColor='red' text="fjern" on_click={()=> {removeFromCart(item)}}/>}
+                <Button backgroundColor={Color.GREEN} text="Køb" onClick={() => {addToCart(item)}}/>
+                {show && <Button backgroundColor={Color.RED} text="fjern" onClick={()=> {removeFromCart(item)}}/>}
             </div>
         )
     })
