@@ -1,27 +1,27 @@
 import { rejects } from "assert";
 import { resolve } from "path";
 import { productList } from "../../Data/ProductList";
-import { error } from "console";
-
-
-
 
 class Server {
-    
-    // testCallBack = (callback, errorCallback){
-    //     if(!theProductList){
-
-    //     }
-
-    // }
-
-    
-    render(){
-        return
+     
+    getProducts = async () => {
+    const products = ["product1", "product"];
+     console.log("getProducts");
+     return new Promise<string[]>((resolve, reject) => {
+        setTimeout(() => {
+        console.log("Returning products");
+        resolve(products)
+    }, 2000);    
+     })
     }
 }
 
 export const server = new Server();
+
+
+
+
+
 // fetching = () => {
 //     const fetching = fetch('http://dr.dk');
 //     console.log("fetching: ", fetching)
@@ -32,41 +32,9 @@ export const server = new Server();
 
 //#region 
 
-// import { useEffect, useState } from "react";
- 
- 
-// export function useProducts(): { loading: boolean, products: string[]} {
-//     const [loadingProducts, setLoadingProducts] = useState(false);
-//     const [products, setProducts] = useState<string[]>([]);
- 
-//     useEffect(() => {
-//         const get = async () => {
-//            setLoadingProducts(true);
-//             const products = await getProducts();
-//             setLoadingProducts(false);
-//             setProducts(products);
-//         }
- 
-//         get();
-//     }, []);
- 
-//     return {
-//         loading: loadingProducts,
-//         products
-//     };
-// }
 
 // nedenfor skal i server class
-// const getProducts = async () => {
-//     const products = ["product1", "product"];
-//      console.log("getProducts");
-//      return new Promise<string[]>((resolve, reject) => {
-//         setTimeout(() => {
-//         console.log("Returning products");
-//         resolve(products)
-//     }, 2000);    
-//      })
-//  }
+
  
 
 // var getProducts = async () => {
@@ -104,52 +72,52 @@ export const server = new Server();
 
 //#region Test example
 
-const userOnline: boolean = true;
-const userStreaming: boolean = true;
+// const userOnline: boolean = true;
+// const userStreaming: boolean = true;
 
-class TestServer {
+// class TestServer {
     
-    testCallBack = (callback: any, errorCallback: any)=>{
-        if(!userOnline){
-            errorCallback({
-                message: "user offline"
-            })
-        }
-        else if(userStreaming){
-            errorCallback({
-                message: "user are streaming"
-            })
-        }
-        else{
-            callback("Server is not used!!")
-        }
-    }
+//     testCallBack = (callback: any, errorCallback: any)=>{
+//         if(!userOnline){
+//             errorCallback({
+//                 message: "user offline"
+//             })
+//         }
+//         else if(userStreaming){
+//             errorCallback({
+//                 message: "user are streaming"
+//             })
+//         }
+//         else{
+//             callback("Server is not used!!")
+//         }
+//     }
 
-    testPromise(){
-        return new Promise((resolve, reject) => {
-            if(!userOnline){
-                reject({
-                    message: "user offline"
-                })
-            }
-            else if(userStreaming){
-                reject({
-                    message: "user are streaming"
-                })
-            }
-            else{
-                resolve("Server is not used!!")
-            }    
-        }
-        )}
-}
+//     testPromise(){
+//         return new Promise((resolve, reject) => {
+//             if(!userOnline){
+//                 reject({
+//                     message: "user offline"
+//                 })
+//             }
+//             else if(userStreaming){
+//                 reject({
+//                     message: "user are streaming"
+//                 })
+//             }
+//             else{
+//                 resolve("Server is not used!!")
+//             }    
+//         }
+//         )}
+// }
 
-export const testServer = new TestServer();
-testServer.testCallBack((message: any) => {
-    console.log("" + message)
-}, (error: any) => {
-    console.log(error.message + " " + error.message)
-})
+// export const testServer = new TestServer();
+// testServer.testCallBack((message: any) => {
+//     console.log("" + message)
+// }, (error: any) => {
+//     console.log(error.message + " " + error.message)
+// })
 
 
 // const promise = new Promise((resolve, rejects) => {
@@ -170,42 +138,42 @@ testServer.testCallBack((message: any) => {
 
 //#endregion
 
-function doStep1(init: number, callback: any) {
-    const result: number = init + 1;
-    callback(result);
-  }
+// function doStep1(init: number, callback: any) {
+//     const result: number = init + 1;
+//     callback(result);
+//   }
   
-  function doStep2(init: number, callback: any) {
-    const result: number = init + 2;
-    callback(result);
-  }
+//   function doStep2(init: number, callback: any) {
+//     const result: number = init + 2;
+//     callback(result);
+//   }
   
-  function doStep3(init: number, callback: any) {
-    const result: number = init + 3;
-    callback(result);
-  }
+//   function doStep3(init: number, callback: any) {
+//     const result: number = init + 3;
+//     callback(result);
+//   }
   
-  function doOperation() {
-    doStep1(0, (result1: number) => {
-      doStep2(result1, (result2: number) => {
-        doStep3(result2, (result3: number) => {
-          console.log(`result is *: ${result3}`);
-        });
-      });
-    });
-  }
+//   function doOperation() {
+//     doStep1(0, (result1: number) => {
+//       doStep2(result1, (result2: number) => {
+//         doStep3(result2, (result3: number) => {
+//           console.log(`result is *: ${result3}`);
+//         });
+//       });
+//     });
+//   }
   
-  doOperation();
+//   doOperation();
 
-  function step1(init: number, callback: any){
-    const resultOfStep1: number = init + 1
-    callback(resultOfStep1);
-  }
-  function doTheSteps(){
-    step1(20, (resultOfResult1: number) => {
-        console.log("resultOfResult1", resultOfResult1)
+//   function step1(init: number, callback: any){
+//     const resultOfStep1: number = init + 1
+//     callback(resultOfStep1);
+//   }
+//   function doTheSteps(){
+//     step1(20, (resultOfResult1: number) => {
+//         console.log("resultOfResult1", resultOfResult1)
 
-    })
-  }
+//     })
+//   }
 
-  doTheSteps();
+//   doTheSteps();
