@@ -1,6 +1,6 @@
 import Header from "../Header/Header"
 import Main from "../Main/Main"
-import Footer from "../Footer/Footer"
+import Footer from "./SiteComponents/Footer/Footer"
 import {API2}  from "../APISimulate/ClassTimer"
 import './Site.scss'
 import React, { useState } from "react"
