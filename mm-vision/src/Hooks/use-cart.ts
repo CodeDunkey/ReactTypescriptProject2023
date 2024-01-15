@@ -18,6 +18,10 @@ export const useCart = () => {
         setCart(cart);
     }
     
+    // getCart return add/remove
+
+    
+
     return {
         cart,
         addToCart,

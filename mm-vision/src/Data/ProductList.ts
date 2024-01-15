@@ -87,5 +87,3 @@ export interface CartLine {
     itemId: number,
     quantity: number,
 }
-
-// export const cartTotal: CartLine[] = [] 

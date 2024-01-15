@@ -26,11 +26,11 @@ export function cartTotalPrice({ cart }: { cart: CartLine[] }) {
     //         showPrice,
     //     ),
     // );
-    console.log(
-        new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(
-            showPrice,
-        ),
-    );
+    // console.log(
+    //     new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(
+    //         showPrice,
+    //     ),
+    // );
     // if(showPrice > 0)
     return showPrice
 }
