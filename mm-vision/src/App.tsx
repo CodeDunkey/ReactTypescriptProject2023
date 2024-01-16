@@ -3,19 +3,14 @@ import { useEffect, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Site from './components/SiteWrapper/Site';
-import { SpinnerSiteRefresh } from './components/APISimulate/ClassTimer';
-import './components/APISimulate/class.css'
 
 function App() {
-
   return (
     <div >
-      <SpinnerSiteRefresh />
       {Site()}
     </div>
   );
 }
-
 export default App;
 
 

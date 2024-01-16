@@ -1,6 +1,6 @@
 // Done
 
-import { Product, productList, CartLine } from "../../../Data/ProductList";
+import { Product, productList, CartLine } from "../Server/Database/ProductList";
 
 export function cartTotalPrice({ cart }: { cart: CartLine[] }) {
 

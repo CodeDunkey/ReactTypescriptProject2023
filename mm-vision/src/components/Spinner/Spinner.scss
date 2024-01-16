@@ -1,0 +1,106 @@
+.spinner-background {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    /* background-color:darkgray */
+    background: rgba(79, 79, 79, 0.6);
+}
+
+.spinner-icon {
+    /* centered */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    position: fixed;
+    opacity: 1;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+
+    /* background: rgba(79, 79, 79, 0.2); */
+    background-image: url('../../Assets/spinner-of-dots.png');
+    background-size: cover;
+    /* border: 2px solid yellow; */
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .spinner-icon {
+        animation: logo-spin infinite 2s ease-in-out;
+    }
+}
+@keyframes logo-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    10%{
+        transform: rotate(120deg);
+    }
+    45% {
+        transform: rotate(120deg);
+    }
+    55%{
+        transform: rotate(240deg);
+    }
+
+    90%{
+        transform: rotate(240deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner-background-small {
+    // position: fixed;
+    // height: 100%;
+    // width: 100%;
+    /* background-color:darkgray */
+    background: rgba(79, 79, 79, 0.6);
+}
+.spinner-icon-small {
+    /* centered */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    position: fixed;
+    opacity: 1;
+    // top: 50%;
+    // left: 50%;
+    margin-top: -15px;
+    margin-left: -130px;
+
+    /* background: rgba(79, 79, 79, 0.2); */
+    background-image: url('../../Assets/LoadingIconSmall.png');
+    background-size: cover;
+    /* border: 2px solid yellow; */
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    pointer-events: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+    .spinner-icon-small {
+        animation: logo-spin-small infinite 0.5s steps(256);
+    }
+}
+@keyframes logo-spin-small {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

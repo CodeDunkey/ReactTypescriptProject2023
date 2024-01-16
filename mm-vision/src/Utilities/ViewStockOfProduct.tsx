@@ -1,4 +1,4 @@
-import { Product } from "./ProductList";
+import { Product } from "../components/Server/Database/ProductList";
 export const HandleStock = (item: Product) => {
     // const stockAmountCheck: number = item.stock;
     // console.log("stockAmountCheck: ", item.stock)

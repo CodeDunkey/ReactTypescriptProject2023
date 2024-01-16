@@ -1,14 +1,14 @@
 import '../Main.scss'
 import {Button, Color} from '../../Button/Button';
-import { productList, Product, CartLine, SetFunction, FindAndRemoveFromCartFun} from '../../../Data/ProductList';
-import { HandleStock } from '../../../Data/HandleStock';
+import { Product, CartLine, SetFunction, FindAndRemoveFromCartFun} from '../../Server/Database/ProductList';
+import { HandleStock } from '../../../Utilities/ViewStockOfProduct';
 
-export default function ProductViewBottom({cart, addToCart, removeFromCart}: {cart: CartLine[], addToCart: SetFunction, removeFromCart: FindAndRemoveFromCartFun}){
+export default function ProductViewBottom({cart, addToCart, removeFromCart, products}: {cart: CartLine[], addToCart: SetFunction, removeFromCart: FindAndRemoveFromCartFun, products: Product[]}){
        
     
 
 
-    const listSlice = productList.slice(3, 6)
+    const listSlice = products.slice(3, 6)
  
     // render classen 
  
@@ -23,7 +23,7 @@ export default function ProductViewBottom({cart, addToCart, removeFromCart}: {ca
             
             let findCart = cart.find(isItem => isItem.itemId == item.id)
             let show: boolean = false;
-            if (findCart){
+            if (findCart && findCart.quantity){
                 show = true;
             }
 

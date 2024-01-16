@@ -1,7 +1,7 @@
 import {Component, ReactNode, useEffect, useState } from "react";
-import './class.css'
+// import './Spinner.css'
 // import Product from "../Wrapper/Product.tsx/Product";
-import { Product, SetFunction, FindAndRemoveFromCartFun } from "../../Data/ProductList";
+import { Product, SetFunction, FindAndRemoveFromCartFun } from "../Server/Database/ProductList";
 import { SpinnerLoadingIcon } from "./Spinner";
 
 //#region // Test example Spinner
@@ -90,7 +90,7 @@ export const SpinnerSiteRefresh: React.FC<SpinnerProps> = () => {
 
   return(
       <>
-          {isSpinnerVisible && <div className="spinner-background"><div className="spinner-icon"></div></div>}
+          {isSpinnerVisible && SpinnerLoadingIcon()}
       </>
   )
 }

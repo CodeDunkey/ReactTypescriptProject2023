@@ -1,17 +1,24 @@
 import Header from "../Header/Header"
 import Main from "../Main/Main"
 import Footer from "../Footer/Footer"
-import {API2}  from "../APISimulate/ClassTimer"
+import {API2}  from "../Spinner/SpinnerRefresh"
 import './Site.scss'
 import React, { useState } from "react"
-import { Product } from "../../Data/ProductList"
-import { useCart } from "../../Hooks/use-cart"
+import { Product } from "../Server/Database/ProductList"
+import { useCart } from "../../Hooks/useCart"
+import { useProductList } from "../../Hooks/useProductList"
+import { SpinnerLoadingIcon } from "../Spinner/Spinner"
+
+
 export default function Site() {
-    const { cart, addToCart, removeFromCart } = useCart();
+    const { loadingCart, cart, addToCart, removeFromCart } = useCart();
+    const { loading, products} = useProductList();
     return (
         <div className="siteWrapper">
-            <Header cart={cart} />
-            <Main cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} />
+
+            {loading && SpinnerLoadingIcon()} 
+            <Header cart={cart} loadingCart={loadingCart}/>
+            <Main cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} products={products}/>
             {/* <Footer /> */}
             {/* <API2 /> */}
         </div>

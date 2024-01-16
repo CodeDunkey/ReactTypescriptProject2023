@@ -1,22 +1,36 @@
 import { rejects } from "assert";
 import { resolve } from "path";
-import { productList } from "../../Data/ProductList";
+import { productList, Product, CartLine } from "../Database/ProductList";
 
-class Server {
+let cart: CartLine[] = [];
+
+class ServerAPI {
      
+    // returns a promise wih a delay
     getProducts = async () => {
-    const products = ["product1", "product"];
+    const products: Product[] = productList;
      console.log("getProducts");
-     return new Promise<string[]>((resolve, reject) => {
+     return new Promise<Product[]>((resolve, reject) => {
         setTimeout(() => {
         console.log("Returning products");
         resolve(products)
     }, 2000);    
      })
     }
+
+    getCart = async () => {
+        const theCart: CartLine[] = cart;
+        console.log("getCart");
+     return new Promise<CartLine[]>((resolve, reject) => {
+        setTimeout(() => {
+        console.log("Returning cart");
+        resolve(theCart)
+    }, 2000);    
+     })
+    }
 }
 
-export const server = new Server();
+export const serverApi = new ServerAPI();
 
 
 
@@ -33,7 +47,7 @@ export const server = new Server();
 //#region 
 
 
-// nedenfor skal i server class
+// nedenfor skal i WebAPI class
 
  
 
@@ -75,7 +89,7 @@ export const server = new Server();
 // const userOnline: boolean = true;
 // const userStreaming: boolean = true;
 
-// class TestServer {
+// class TestWebAPI {
     
 //     testCallBack = (callback: any, errorCallback: any)=>{
 //         if(!userOnline){
@@ -89,7 +103,7 @@ export const server = new Server();
 //             })
 //         }
 //         else{
-//             callback("Server is not used!!")
+//             callback("WebAPI is not used!!")
 //         }
 //     }
 
@@ -106,14 +120,14 @@ export const server = new Server();
 //                 })
 //             }
 //             else{
-//                 resolve("Server is not used!!")
+//                 resolve("WebAPI is not used!!")
 //             }    
 //         }
 //         )}
 // }
 
-// export const testServer = new TestServer();
-// testServer.testCallBack((message: any) => {
+// export const testWebAPI = new TestWebAPI();
+// testWebAPI.testCallBack((message: any) => {
 //     console.log("" + message)
 // }, (error: any) => {
 //     console.log(error.message + " " + error.message)

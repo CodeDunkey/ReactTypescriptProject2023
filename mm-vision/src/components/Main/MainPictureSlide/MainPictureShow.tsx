@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import './MainPictureSlide.scss'
-import { ShowSliderPicturesArray } from './MainSliderPictures';
+import { ShowSliderPicturesArray } from './MainSliderPicturesCollection';
 
 export default function MainPicture() {
 
