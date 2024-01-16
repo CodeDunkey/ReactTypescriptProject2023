@@ -14,20 +14,91 @@ class ServerAPI {
         setTimeout(() => {
         console.log("Returning products");
         resolve(products)
-    }, 2000);    
+    }, 3000);    
      })
     }
 
-    getCart = async () => {
-        const theCart: CartLine[] = cart;
-        console.log("getCart");
-     return new Promise<CartLine[]>((resolve, reject) => {
-        setTimeout(() => {
-        console.log("Returning cart");
-        resolve(theCart)
-    }, 2000);    
-     })
+    // getCart = async () => {
+    //     const theCart: CartLine[] = cart;
+    //     console.log("getCart");
+    //  return new Promise<CartLine[]>((resolve, reject) => {
+    //     setTimeout(() => {
+    //     console.log("Returning cart");
+    //     resolve(theCart)
+    // }, 2000);    
+    //  })
+    // }
+
+    addToCart = async (product: Product) => {
+        console.log("cart from ClientApi", cart)
+        // skal dette flyttes over i useCart??
+        const products: Product[] = productList;
+
+        const findCartItem = cart.find(find => find.itemId == product.id)
+        
+        // const findProduct = productList.map((item)=>{
+            // const findProduct = item.find(find => find.)
+        // })
+
+        if(findCartItem){
+            new Promise((resolve, reject) => {
+                setTimeout(() =>{
+                    findCartItem.quantity++
+                      
+                    resolve([...cart])
+                }, 1500);
+            });
+            // findCartItem.quantity++
+        }        
+        if(!findCartItem){
+            const addToCart: CartLine = {
+                itemId: product.id, 
+                quantity: 1
+            }
+            cart.push(addToCart);
+        }
+        
+        
+        return new Promise<CartLine[]>((resolve, reject) => {
+            setTimeout(() =>{
+                resolve([...cart])
+            }, 1500);
+        });
+        
+        // return [...cart]
     }
+    removeFromCart = async (product: Product) => {
+        // skal dette flyttes over i useCart??
+        const targetIndex = cart.findIndex(cartProduct => cartProduct.itemId === product.id);
+        const findCartItem = cart.find(find => find.itemId == product.id);
+        if(findCartItem){
+            
+            new Promise<CartLine[]>((resolve, reject) => {
+                setTimeout(() =>{
+                    findCartItem.quantity--
+                    resolve([...cart])
+                }, 1500);
+            }); 
+            //findCartItem.quantity--
+        }
+        
+        if (targetIndex !== -1 && findCartItem?.quantity === 0) {
+            cart = [...cart.slice(0, targetIndex), ...cart.slice(targetIndex + 1)];
+            return new Promise<CartLine[]>((resolve, reject) => {
+                setTimeout(() =>{
+                    resolve([...cart])
+                }, 1500);
+            }); 
+            // return [...cart];
+        }  
+        return new Promise<CartLine[]>((resolve, ) => {
+            setTimeout(() =>{
+                resolve([...cart])
+            }, 1500);
+        });      
+        // return [...cart];
+    }
+
 }
 
 export const serverApi = new ServerAPI();

@@ -12,16 +12,16 @@ export const useCart = () => {
     const addToCart = async (item: Product) => {
         
         setLoadingCart(true)
-        // let cartLine = await clientApi.addToCart(item);
+        let cartLine = await clientApi.addToCart(item);
         setLoadingCart(false);
-        // setCart(cartLine);
+        setCart(cartLine);
     }
     
     const removeFromCart =  async (product: Product) => {
         setLoadingCart(true);
-        // let cart = await clientApi.removeFromCart(product);
+        let cart = await clientApi.removeFromCart(product);
         setLoadingCart(false);
-        // setCart(cart);
+        setCart(cart);
     }
     
     // console.log("loadingCart ", loadingCart)
