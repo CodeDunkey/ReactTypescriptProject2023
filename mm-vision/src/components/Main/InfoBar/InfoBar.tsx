@@ -1,6 +1,7 @@
-import '../../Main/Main.scss'
+import { Picture } from '../../../Types/Types'
+import './InfoBar.scss'
 
-export default function InfoBar() {
+export default function InfoBar({pictures}: {pictures: Picture[]}) {
     return (
         <div className='infoBarTop'>
             Gratis Fragt |

@@ -1,11 +1,15 @@
 import { useState } from "react";
+import React from "react";
 import { Product, CartLine } from "../Types/Types";
 import clientApi from "../Utilities/ClientApi";
 
+// Her skal useContext bruges
+const CartContext = React.createContext<CartLine[]>([])
+
 // useCart Hook
 export const useCart = () => {
-    const [loadingCart, setLoadingCart] = useState<boolean>(false)
-    const [cart, setCart] = useState<CartLine[]>([]);
+    const [loadingCart, setLoadingCart] = useState<boolean>(false) // useContext
+    const [cart, setCart] = useState<CartLine[]>([]); // useContext
     
     const addToCart = async (item: Product) => {
         setLoadingCart(true)

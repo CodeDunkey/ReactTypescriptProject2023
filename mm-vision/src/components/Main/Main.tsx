@@ -12,7 +12,7 @@ export default function Main({cart, addToCart, removeFromCart, products, picture
     return(
         <div className='main'>
             <MainPictureShow pictures={pictures}/>
-            <InfoBar />
+            <InfoBar pictures={pictures}/>
             <ProductViewTop products={products}/>
             <SeriesOption />
             <Banner />

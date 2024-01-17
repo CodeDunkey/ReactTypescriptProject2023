@@ -9,7 +9,7 @@ import './Site.scss'
 
 
 export default function Site() {
-    const { loadingCart, cart, addToCart, removeFromCart } = useCart();
+    const { loadingCart, cart, addToCart, removeFromCart } = useCart(); // skal slettes og der skal bruges useContext i stedet!
     const { loading, products} = useProductList();
     const { loadingPicture, pictures} = usePictures();
     return (
