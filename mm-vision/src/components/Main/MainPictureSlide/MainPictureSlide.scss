@@ -58,13 +58,13 @@
             }
             @keyframes nextPicture {
                 
-                // 0% {
-                //     transform: translateX(1140px);
-                // }
+                0% {
+                    transform: translateX(1140px);
+                }
 
-                // 20% {
-                //     transform: translateX(0px);
-                // }
+                20% {
+                    transform: translateX(0px);
+                }
                 80% {
                     transform: translateX(0px);
                 }

@@ -1,7 +1,5 @@
-import {Button, Color} from "../../Button/Button"
-   
-
-
+import {Button} from "../../Button/Button"
+import { Color } from "../../../Types/Types"
 
 export default function SeriesOption(){
     return(<div className='seriesOptionWrapper'>

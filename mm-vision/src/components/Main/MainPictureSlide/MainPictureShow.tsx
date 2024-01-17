@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 import './MainPictureSlide.scss'
-import { ShowSliderPicturesArray } from './MainSliderPicturesCollection';
+import { Picture } from '../../../Types/Types';
 
-export default function MainPicture() {
+export default function MainPictureShow({pictures}: {pictures: Picture[]}) {
 
     const [pictureNumber, setPictureNumber] = useState(1)
 
+    const showSliderPicturesArray = pictures.slice(0,3);
 
     function currentSlide(para: number) {
         setPictureNumber(para)
@@ -13,7 +14,7 @@ export default function MainPicture() {
 
     
     const find = (pictureNumber: number) => {
-        if (pictureNumber < ShowSliderPicturesArray.length) {
+        if (pictureNumber < showSliderPicturesArray.length) {
             return pictureNumber + 1
         }
         return 1
@@ -21,15 +22,9 @@ export default function MainPicture() {
     
     function showSlides() {
         
-        // dots[slideIndex - 1].className += " active";
-        
-        const findCurrentPicture = ShowSliderPicturesArray.find(findPict => findPict.id === pictureNumber)
-        const findNextPicture = ShowSliderPicturesArray.find(findPict => findPict.id === find(pictureNumber))
-        // console.log("pictureNumber", pictureNumber)
-        // console.log("findNextPicturePictureNumber", find(pictureNumber))
-
-        // console.log("findCurrentPicture", findCurrentPicture)
-        // console.log("findNextPicture", findNextPicture)
+        const findCurrentPicture = showSliderPicturesArray.find(findPict => findPict.id === pictureNumber)
+        const findNextPicture = showSliderPicturesArray.find(findPict => findPict.id === find(pictureNumber))
+       
         const pictures =
             <div className='mySlides'>
                 <div className='imageWrapper'>
@@ -40,31 +35,24 @@ export default function MainPicture() {
                     <div className='sliderDot' onClick={() => currentSlide(1)}></div>
                     <div className='sliderDot' onClick={() => currentSlide(2)}></div>
                     <div className='sliderDot' onClick={() => currentSlide(3)}></div>
-                    {/* <button onClick={()=> {showSlides2()}}>timer</button> */}
                 </div>
             </div>;
-
-        // console.log("pictureNumber: ", pictureNumber)
-        // console.log("findNextPicturePictureNumber(): ", findNextPicturePictureNumber())
 
         return pictures
     }
     showSlides()
 
-    const slideEffect = useEffect(() => {
+    useEffect(() => {
         const interval = setInterval(() => {
             setPictureNumber((pictureNumber) => {
-                if (pictureNumber < ShowSliderPicturesArray.length) {
+                if (pictureNumber < showSliderPicturesArray.length) {
                     return pictureNumber + 1
                 }
                 return 1
             })
         }, 2950);
-
-        // console.log("interval", interval)
         return () => clearInterval(interval)
     })
-
 
     return (
         <div className="mainPictureSlideContainer">

@@ -16,7 +16,7 @@
 
         .picture {
             display: flex;
-            background-image: url("../../../Assets/mm-visionLogo.png"), ;
+            background-image: url("../../Server/Assets/mm-visionLogo.png"), ;
             background-repeat: no-repeat;
             background-size: cover;
             height: 60px;
@@ -43,9 +43,8 @@
                 display: flex;
                 justify-content: center;
                 // border: 1px solid yellowgreen;
-
                 margin-right: 15px;
-                background-image: url("../../../Assets/CartLogo.png");
+                background-image: url("../../Server/Assets/CartLogo.png");
                 // background-image: linear-gradient(180deg, red, black);
                 background-size: cover;
                 height: 33px;

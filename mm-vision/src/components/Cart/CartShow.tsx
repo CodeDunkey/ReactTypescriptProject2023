@@ -1,7 +1,7 @@
 import './Cart.scss'
 import { cartTotalPrice } from './CartTotalPrice'
 import { cartInventory } from './CartInventory'
-import { CartLine } from '../Server/Database/ProductList'
+import { CartLine } from '../../Types/Types'
 export const CartShow = ({ cart }: { cart: CartLine[] }) => {
     return (
         <div className='cartWrapper'>

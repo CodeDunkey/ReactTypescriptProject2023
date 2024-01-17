@@ -1,16 +1,5 @@
-
-export interface Product {
-    individualRandomNr: number
-    id: number
-    type: string
-    model: string
-    description: string
-    picture: string
-    price: number
-    stock: number
-    deliveryTime: string
-}
-
+// Done
+import { Product } from "../../../Types/Types";
 export const productList: Product[] = [
     {
         individualRandomNr: Math.random(),
@@ -21,7 +10,7 @@ export const productList: Product[] = [
         picture: "abc",
         price: 3000,
         stock: 10,
-        deliveryTime: "7 dage"
+        deliveryTime: "12 dage"
     },
     {
         individualRandomNr: Math.random(),
@@ -43,7 +32,7 @@ export const productList: Product[] = [
         picture: "abc",
         price: 7000,
         stock: 10,
-        deliveryTime: "3 dage"
+        deliveryTime: "21 dage"
     },
     {
         individualRandomNr: Math.random(),
@@ -54,7 +43,7 @@ export const productList: Product[] = [
         picture: "abc",
         price: 1000,
         stock: 3,
-        deliveryTime: "4 dage"
+        deliveryTime: "21 dage"
     },
     {
         individualRandomNr: Math.random(),
@@ -65,7 +54,7 @@ export const productList: Product[] = [
         picture: "abc",
         price: 600,
         stock: 0,
-        deliveryTime: "3 dage"
+        deliveryTime: "14 dage"
     },
     {
         individualRandomNr: Math.random(),
@@ -76,14 +65,7 @@ export const productList: Product[] = [
         picture: "abc",
         price: 8500,
         stock: 15,
-        deliveryTime: "6 dage"
+        deliveryTime: "14 dage"
     },
 ];
 
-export type SetFunction = (product: Product) => void;
-export type FindAndRemoveFromCartFun = (param: Product) => void;
-
-export interface CartLine {
-    itemId: number,
-    quantity: number,
-}

@@ -1,9 +1,8 @@
 // Done
-
-import './HeaderCart.scss'
-import { CartLine } from '../../Server/Database/ProductList'
+import { CartLine } from '../../../Types/Types'
 import { CartShow } from '../../Cart/CartShow'
 import { SpinnerLoadingIconSmall } from '../../Spinner/Spinner'
+import './HeaderCart.scss'
 export const HeaderCart = ({ cart, loadingCart }: { cart: CartLine[], loadingCart: boolean }) => {
     return (
         <div className='headerWrapperCart'>

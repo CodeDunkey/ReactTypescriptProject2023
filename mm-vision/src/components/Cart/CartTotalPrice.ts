@@ -1,6 +1,7 @@
 // Done
 
-import { Product, productList, CartLine } from "../Server/Database/ProductList";
+import { productList } from "../Server/Database/ProductList";
+import { CartLine } from "../../Types/Types";
 
 export function cartTotalPrice({ cart }: { cart: CartLine[] }) {
 
@@ -8,7 +9,7 @@ export function cartTotalPrice({ cart }: { cart: CartLine[] }) {
     let showPrice: number = 0;
 
     totalPrice = [];
-    const cartId = cart.map(item => {
+    cart.map(item => {
         productList.forEach(prod => {
             if (prod.id === item.itemId) {
                 totalPrice.push(prod.price * item.quantity)

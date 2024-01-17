@@ -1,5 +1,5 @@
 // Done
-import { CartLine } from "../Server/Database/ProductList";
+import { CartLine } from "../../Types/Types";
 
 export function cartInventory({ cart }: any) {
     let mapOf: Array<number> = [];

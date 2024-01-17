@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Product } from "../components/Server/Database/ProductList"
+import { Product } from "../Types/Types"
 import clientApi from "../Utilities/ClientApi"
 
 export const useProductList = () => {
@@ -9,16 +9,12 @@ export const useProductList = () => {
     useEffect(() => {
         const get = async () => {
             setLoadingProductList(true);
-            // console.log("loadingProductList: ", loadingProductList)
             const products = await clientApi.getProducts();
-            // console.log("products from useProductList ", products)
             setLoadingProductList(false);
-            // console.log("loadingProductList: ", loadingProductList)
             setProducts(products);
         }
         get();
     }, []);
-    console.log("loadingProductList: ", loadingProductList)
 
     return {
         loading: loadingProductList,
