@@ -4,7 +4,7 @@ import { Product, CartLine } from "../Types/Types";
 import clientApi from "../Utilities/ClientApi";
 
 // Her skal useContext bruges
-const CartContext = React.createContext<CartLine[]>([])
+// const CartContext = React.createContext<CartLine[]>([])
 
 // useCart Hook
 export const useCart = () => {

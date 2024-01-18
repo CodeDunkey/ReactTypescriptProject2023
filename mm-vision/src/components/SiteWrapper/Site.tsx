@@ -5,6 +5,8 @@ import { useCart } from "../../Hooks/useCart"
 import { useProductList } from "../../Hooks/useProductList"
 import { usePictures } from "../../Hooks/usePictureList"
 import { SpinnerLoadingIcon } from "../Spinner/Spinner"
+import { ContextExample } from "../../Hooks/useContextComponentExample"
+import { contextCreate } from "../../Hooks/useContextCreateContext"
 import './Site.scss'
 
 
@@ -14,10 +16,13 @@ export default function Site() {
     const { loadingPicture, pictures} = usePictures();
     return (
         <div className="siteWrapper">
+            <contextCreate.Provider>
             {loading && SpinnerLoadingIcon()} 
+            <ContextExample />
             <Header cart={cart} loadingCart={loadingCart}/>
             <Main cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} products={products} pictures={pictures}/>
             <Footer />
+        </contextCreate.Provider>
         </div>
     )
 }
