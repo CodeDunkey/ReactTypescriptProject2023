@@ -10,10 +10,10 @@ class ServerAPI {
     // returns a promise wih a delay
     getProducts = async () => {
     const products: Product[] = productList;
-     console.log("getProducts");
+    //  console.log("getProducts");
      return new Promise<Product[]>((resolve, reject) => {
         setTimeout(() => {
-        console.log("Returning products");
+        // console.log("Returning products");
         resolve(products)
     }, 3000);    
      })
@@ -21,10 +21,10 @@ class ServerAPI {
     
     getPictures = async () => {
         const pictures: Picture[] = pictureList;
-         console.log("getPictures");
+        //  console.log("getPictures");
          return new Promise<Picture[]>((resolve, reject) => {
             setTimeout(() => {
-            console.log("Returning pictures");
+            // console.log("Returning pictures");
             resolve(pictures)
         }, 3000);    
          })

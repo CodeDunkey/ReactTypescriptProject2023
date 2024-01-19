@@ -4,7 +4,7 @@ import { Color } from '../../../Types/Types';
 import { Button } from '../../Button/Button';
 import { Product, CartLine, SetFunction, FindAndRemoveFromCartFun } from '../../../Types/Types';
 import { HandleStock } from '../../../Utilities/ViewStockOfProduct';
-import { ContextExample } from '../../../Hooks/useContextComponentExample';
+
 export default function ProductViewBottom({ cart, addToCart, removeFromCart, products }: { cart: CartLine[], addToCart: SetFunction, removeFromCart: FindAndRemoveFromCartFun, products: Product[] }) {
     
     const listSlice = products.slice(3, 6)
@@ -22,7 +22,6 @@ export default function ProductViewBottom({ cart, addToCart, removeFromCart, pro
                 {HandleStock(item)}
                 <Button backgroundColor={Color.GREEN} text="Køb" onClick={() => { addToCart(item) }} />
                 {show && <Button backgroundColor={Color.RED} text="fjern" onClick={() => { removeFromCart(item) }} />}
-                <ContextExample />
             </div>
         )
     })

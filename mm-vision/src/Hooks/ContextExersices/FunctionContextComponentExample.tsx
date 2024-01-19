@@ -1,23 +1,25 @@
 import { useContext } from "react";
-import { contextCreate } from "./useContextCreateContext";
+// import { ThemeContext } from "./useContextHook";
 // Her skal useContext bruges
-// export const CartContext = React.createContext<unknown>("")
+
 
 // useCart Hook
 
 export const ContextExample = () => {
-    
-    const showBool = useContext(contextCreate)
-    console.log(showBool)
-    // const changeBool = ()=> {
-//     setTrueOrFalse(flip => !flip)
-// }
-    // console.log("trueOrFalse is : ", trueOrFalse)
-    return (
-        
-        <button >Bool is: {showBool.valueOf()} {showBool}</button>
-        )
 
+    // let {theme, setTheme} = useContext(ThemeContext)
+    
+    // console.log("theme", theme)
+    
+    
+    
+    
+    return (
+        <>
+            {/* current theme {theme} */}
+            {/* <button onClick={changeTheme} style={{backgroundColor: theme}}>Change Theme</button> */}
+        </>
+    )
 }
 
 // export const useCart = () => {

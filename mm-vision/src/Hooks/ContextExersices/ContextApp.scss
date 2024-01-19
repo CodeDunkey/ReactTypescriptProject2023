@@ -1,0 +1,28 @@
+.contextAppWrapper{
+    display: flex;
+    flex-direction: row;
+}
+.squareOne{
+    border: 3px solid green;
+    background-color: aliceblue;
+    height: 100px;
+    width: 100px;
+}
+.squareTwo{
+    border: 3px solid blue;
+    background-color: aliceblue;
+    height: 100px;
+    width: 100px;
+}
+.squareThree{
+    border: 3px solid red;
+    background-color: aliceblue;
+    height: 100px;
+    width: 100px;
+}
+.squareFour{
+    border: 3px solid yellow;
+    background-color: aliceblue;
+    height: 100px;
+    width: 100px;
+}

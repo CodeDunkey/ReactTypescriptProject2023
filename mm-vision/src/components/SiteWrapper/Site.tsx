@@ -5,10 +5,8 @@ import { useCart } from "../../Hooks/useCart"
 import { useProductList } from "../../Hooks/useProductList"
 import { usePictures } from "../../Hooks/usePictureList"
 import { SpinnerLoadingIcon } from "../Spinner/Spinner"
-import { ContextExample } from "../../Hooks/useContextComponentExample"
-import { contextCreate } from "../../Hooks/useContextCreateContext"
+import { ContextApp } from "../../Hooks/ContextExersices/AppWithContext"
 import './Site.scss'
-
 
 export default function Site() {
     const { loadingCart, cart, addToCart, removeFromCart } = useCart(); // skal slettes og der skal bruges useContext i stedet!
@@ -16,13 +14,11 @@ export default function Site() {
     const { loadingPicture, pictures} = usePictures();
     return (
         <div className="siteWrapper">
-            <contextCreate.Provider>
+            <ContextApp/>
             {loading && SpinnerLoadingIcon()} 
-            <ContextExample />
             <Header cart={cart} loadingCart={loadingCart}/>
             <Main cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} products={products} pictures={pictures}/>
             <Footer />
-        </contextCreate.Provider>
         </div>
     )
 }
