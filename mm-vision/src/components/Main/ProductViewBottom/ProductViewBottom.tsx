@@ -4,9 +4,12 @@ import { Color } from '../../../Types/Types';
 import { Button } from '../../Button/Button';
 import { Product, CartLine, SetFunction, FindAndRemoveFromCartFun } from '../../../Types/Types';
 import { HandleStock } from '../../../Utilities/ViewStockOfProduct';
+import { useCart } from '../../../Hooks/useCart';
+// import { useCartContext, useAddToCart, useRemoveFromCart } from '../../../Hooks/useContext/CartContextProvider';
 
-export default function ProductViewBottom({ cart, addToCart, removeFromCart, products }: { cart: CartLine[], addToCart: SetFunction, removeFromCart: FindAndRemoveFromCartFun, products: Product[] }) {
-    
+export default function ProductViewBottom({ products }: { products: Product[] }) {
+    const { cart, addToCart, removeFromCart } = useCart();
+
     const listSlice = products.slice(3, 6)
 
     const product = listSlice.map((item: Product) => {

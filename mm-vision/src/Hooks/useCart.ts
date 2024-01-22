@@ -1,33 +1,32 @@
-import { useState } from "react";
-import React from "react";
-import { Product, CartLine } from "../Types/Types";
+import { useContext } from "react";
+import { Product } from "../Types/Types";
 import clientApi from "../Utilities/ClientApi";
-
-// Her skal useContext bruges
-// const CartContext = React.createContext<CartLine[]>([])
+import { CartContext } from "./useContext/CartContextProvider";
 
 // useCart Hook
 export const useCart = () => {
-    const [loadingCart, setLoadingCart] = useState<boolean>(false) // useContext
-    const [cart, setCart] = useState<CartLine[]>([]); // useContext
-    
+
+    // henter information fra de states der er i CartContextProvider
+    // der bliver givet i "site"
+    const cartContext = useContext(CartContext);
+     
     const addToCart = async (item: Product) => {
-        setLoadingCart(true)
+        cartContext.setLoadingCart(true)
         let cartLine = await clientApi.addToCart(item);
-        setLoadingCart(false);
-        setCart(cartLine);
+        cartContext.setLoadingCart(false);
+        cartContext.setCart(cartLine);
     }
     
     const removeFromCart =  async (product: Product) => {
-        setLoadingCart(true);
+        cartContext.setLoadingCart(true);
         let cart = await clientApi.removeFromCart(product);
-        setLoadingCart(false);
-        setCart(cart);
+        cartContext.setLoadingCart(false);
+        cartContext.setCart(cart);
     }
 
     return {
-        loadingCart: loadingCart,
-        cart,
+        loadingCart: cartContext.loadingCart,
+        cart: cartContext.cart,
         addToCart,
         removeFromCart
     }

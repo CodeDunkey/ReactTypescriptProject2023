@@ -1,0 +1,39 @@
+// import { useState, useContext, createContext } from "react";
+
+
+// const ThemeContext2 = createContext("") // <{theme: string, setTheme: (theme: string) => void}>({theme: "white", setTheme: () => {}})
+// export const useTheme2 = () => {
+//     return useContext(ThemeContext2)
+// }
+
+// const ThemeUpdateContext2 = createContext(()=>{})
+// export const useThemeUpdate2 = () => {
+//     return useContext(ThemeUpdateContext2)
+// }
+// export const ThemeBlueGrey = () => {
+//     const [theme2, setTheme] = useState("white");
+
+//     const changeTheme2 = () => {
+//         setTheme("blue")
+//         if (theme2 === "blue") {
+
+//             setTheme("darkgrey")
+//         }
+//         if (theme2 === "darkgrey") {
+
+//             setTheme("blue")
+//         }
+//     }
+//     return { theme2, changeTheme2 }
+// }
+// export const ThemeProvider2 = ({ children }: any) => {
+//     const themeBlueGrey = ThemeBlueGrey()
+    
+//     return(
+//         <ThemeContext2.Provider value={themeBlueGrey.theme2}>
+//             <ThemeUpdateContext2.Provider value={themeBlueGrey.changeTheme2}>
+//                 {children}
+//             </ThemeUpdateContext2.Provider>
+//         </ThemeContext2.Provider>
+//     )
+// }

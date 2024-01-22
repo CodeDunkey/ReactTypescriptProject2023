@@ -8,7 +8,7 @@ import { Product, CartLine, SetFunction, FindAndRemoveFromCartFun, Picture} from
 import './Main.scss'
 import MainPictureShow from './MainPictureSlide/MainPictureShow'
 
-export default function Main({cart, addToCart, removeFromCart, products, pictures}: {cart:CartLine[], addToCart: SetFunction, removeFromCart: FindAndRemoveFromCartFun, products: Product[], pictures: Picture[]}){
+export default function Main({products, pictures}: {products: Product[], pictures: Picture[]}){
     return(
         <div className='main'>
             <MainPictureShow pictures={pictures}/>
@@ -16,7 +16,7 @@ export default function Main({cart, addToCart, removeFromCart, products, picture
             <ProductViewTop products={products}/>
             <SeriesOption />
             <Banner />
-            <ProductViewBottom  cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} products={products}/>
+            <ProductViewBottom  products={products}/>
         </div>
     )
 }

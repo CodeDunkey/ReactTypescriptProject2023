@@ -1,0 +1,39 @@
+// import { useContext, createContext } from "react";
+// import { ThemeBlueGrey } from "./ThemeBlueGrey";
+
+// const ThemeContextScafold = createContext("")
+
+// const ThemeUpdateContextScafold = createContext(()=>{})
+
+
+// export class ThemeProviderClass {
+//     setThemeInitValue = () => {
+
+//     }
+//     useThemeScafold = () => {
+
+//         return useContext(ThemeContextScafold)
+//     }
+    
+//     useThemeUpdateScafold = () => {
+//         return useContext(ThemeUpdateContextScafold)
+//     }
+//     ThemeProvider2 = ({ children }: any) => {
+//         <ThemContextScafold.Provider value={""}>
+//             <ThemeUpdateContextScafold.Provider value={()=>{}}>
+//                 {children}
+//             </ThemeUpdateContextScafold.Provider>
+//         </ThemeContextScafold.Provider>
+    
+//     }
+//     render(){
+        
+//         return this.ThemeProvider2
+//     }
+    
+// }
+
+// // export const blueGrey = new ThemeProviderClass()
+// // blueGrey
+
+// ThemeBlueGrey().changeTheme2();

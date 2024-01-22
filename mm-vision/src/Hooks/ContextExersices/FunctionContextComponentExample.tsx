@@ -1,49 +1,15 @@
-import { useContext } from "react";
-// import { ThemeContext } from "./useContextHook";
+import { useTheme, useThemeUpdate } from "./ThemeContextProviderWhiteGrey";
+// import { useCartContext } from "../useContext/CartContextProvider";
 // Her skal useContext bruges
-
-
 // useCart Hook
-
 export const ContextExample = () => {
 
-    // let {theme, setTheme} = useContext(ThemeContext)
-    
-    // console.log("theme", theme)
-    
-    
-    
-    
+    // console.log(useCartContext())
+
     return (
         <>
-            {/* current theme {theme} */}
-            {/* <button onClick={changeTheme} style={{backgroundColor: theme}}>Change Theme</button> */}
+            {/* Cart {useCartContext()} */}
+            <button onClick={useThemeUpdate()} style={{backgroundColor: useTheme()}}>Change Theme</button>
         </>
     )
 }
-
-// export const useCart = () => {
-//     const [loadingCart, setLoadingCart] = useState<boolean>(false) // useContext
-//     const [cart, setCart] = useState<CartLine[]>([]); // useContext
-    
-//     const addToCart = async (item: Product) => {
-//         setLoadingCart(true)
-//         let cartLine = await clientApi.addToCart(item);
-//         setLoadingCart(false);
-//         setCart(cartLine);
-//     }
-    
-//     const removeFromCart =  async (product: Product) => {
-//         setLoadingCart(true);
-//         let cart = await clientApi.removeFromCart(product);
-//         setLoadingCart(false);
-//         setCart(cart);
-//     }
-
-//     return {
-//         loadingCart: loadingCart,
-//         cart,
-//         addToCart,
-//         removeFromCart
-//     }
-// }

@@ -3,7 +3,7 @@ import { CartLine } from '../../../Types/Types'
 import { CartShow } from '../../Cart/CartShow'
 import { SpinnerLoadingIconSmall } from '../../Spinner/Spinner'
 import './HeaderCart.scss'
-export const HeaderCart = ({ cart, loadingCart }: { cart: CartLine[], loadingCart: boolean }) => {
+export const HeaderCart = () => {
     return (
         <div className='headerWrapperCart'>
             <div className='pictureWrapper'>
@@ -12,8 +12,8 @@ export const HeaderCart = ({ cart, loadingCart }: { cart: CartLine[], loadingCar
             <div className='logoCartWrapper'>
                 <div className='logoCartInner'>
                     <div className='logo'></div>
-                    <CartShow cart={cart} />
-                    {loadingCart && SpinnerLoadingIconSmall()}
+                    <CartShow />
+                    {/* {loadingCart && SpinnerLoadingIconSmall()} */}
                 </div>
             </div>
         </div>

@@ -1,0 +1,13 @@
+// import { useTheme2, useThemeUpdate2 } from "./ThemeContextProviderBlueGrey";
+
+// export const ContextExample2 = () => {
+    
+//     return (
+//         <>
+            
+//             current theme {useTheme2()}
+//             <button onClick={useThemeUpdate2()} style={{backgroundColor: useTheme2(), height: "20px", fontSize: "10px"}}>Change Theme</button>
+            
+//         </>
+//     )
+// }

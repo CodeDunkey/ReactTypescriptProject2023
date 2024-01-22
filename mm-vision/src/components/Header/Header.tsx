@@ -4,11 +4,11 @@ import TextArea from './TextArea/TextArea'
 import { HeaderCart } from './HeaderCart/HeaderCart'
 import { CartLine } from '../../Types/Types'
 
-export default function Header({cart, loadingCart}: {cart: CartLine[], loadingCart: boolean}){
+export default function Header(){
         return(
         <div className='headerWrapper'>
             <TextArea />
-            <HeaderCart cart={cart} loadingCart={loadingCart}/>
+            <HeaderCart />
             <MenuAndSearchBar />
         </div>
     )

@@ -1,24 +1,28 @@
 import Header from "../Header/Header"
 import Main from "../Main/Main"
 import Footer from "../Footer/Footer"
-import { useCart } from "../../Hooks/useCart"
 import { useProductList } from "../../Hooks/useProductList"
 import { usePictures } from "../../Hooks/usePictureList"
 import { SpinnerLoadingIcon } from "../Spinner/Spinner"
 import { ContextApp } from "../../Hooks/ContextExersices/AppWithContext"
+import { CartContextProvider } from "../../Hooks/useContext/CartContextProvider"
 import './Site.scss'
 
+
 export default function Site() {
-    const { loadingCart, cart, addToCart, removeFromCart } = useCart(); // skal slettes og der skal bruges useContext i stedet!
-    const { loading, products} = useProductList();
-    const { loadingPicture, pictures} = usePictures();
+
+    const { loading, products } = useProductList();
+    const { loadingPicture, pictures } = usePictures();
+
     return (
-        <div className="siteWrapper">
-            <ContextApp/>
-            {loading && SpinnerLoadingIcon()} 
-            <Header cart={cart} loadingCart={loadingCart}/>
-            <Main cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} products={products} pictures={pictures}/>
-            <Footer />
-        </div>
+        <CartContextProvider>
+            <div className="siteWrapper">
+                <ContextApp />
+                {loading && SpinnerLoadingIcon()}
+                <Header />
+                <Main pictures={pictures} products={products} />
+                <Footer />
+            </div>
+        </CartContextProvider>
     )
 }
