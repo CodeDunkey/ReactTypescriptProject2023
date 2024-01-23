@@ -18,7 +18,7 @@ export const CartContext = createContext<CartContextValue>({
 export const CartContextProvider = ({children}: { children: React.ReactElement }) => {
     // har skal state være og ikke i hooken da den vil få sin egen instans hvis det er i hooken.
     const [cart, setCart] = useState<CartLine[]>([]);
-    
+    // console.log("cart fra cartcontext: ", cart)
     // har skal state være og ikke i hooken da den vil få sin egen instans hvis det er i hooken.
     const [loadingCart, setLoadingCart] = useState<boolean>(false)
 

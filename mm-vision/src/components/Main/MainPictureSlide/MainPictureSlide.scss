@@ -91,7 +91,10 @@
             border-radius: 50%;
             display: inline-block;
         }
-        .active,
+        .active{
+            background-color: #d20000;
+
+        }
 
         .sliderDot:hover {
             background-color: #d20000;

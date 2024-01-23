@@ -13,7 +13,7 @@ export default function Main({products, pictures}: {products: Product[], picture
         <div className='main'>
             <MainPictureShow pictures={pictures}/>
             <InfoBar pictures={pictures}/>
-            <ProductViewTop products={products}/>
+            <ProductViewTop pictures={pictures} products={products}/>
             <SeriesOption />
             <Banner />
             <ProductViewBottom  products={products}/>

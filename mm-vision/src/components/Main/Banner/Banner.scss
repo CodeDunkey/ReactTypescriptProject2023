@@ -1,0 +1,17 @@
+.banner {
+    display: flex;
+    align-items: center;
+    height: 56px;
+    width: 1140px;
+    margin: 10px 0px 15px 0px;
+    color: aliceblue;
+    background-image: linear-gradient(180deg, #454545, #282727);
+    // border: 1px solid green;
+
+    .text {
+        margin-left: 20px;
+        font-size: 22px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #ddd;
+    }
+}

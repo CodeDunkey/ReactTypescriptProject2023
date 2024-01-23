@@ -1,0 +1,38 @@
+.productViewbottomWrapper {
+    // border: 0.5px solid purple;
+    display: flex;
+    // flex-wrap: wrap;
+
+    height: 660px;
+    width: 1140px;
+
+    .productViewBottom {
+        // border: 0.5px solid orange;
+        display: flex;
+        flex-direction: column;
+        // justify-content: center;
+        // align-items: center;
+        color: #fff;
+        background-color: #161616;
+        background-repeat: no-repeat;
+        // height: 660px;
+        width: 380px;
+        margin: 7.5px;
+
+        .button {
+            margin: 7.5px;
+        }
+
+        .showPrice {
+            border-radius: 4px;
+            padding: 5px 0;
+            font-size: 22px;
+            font-weight: 400;
+            background: #323232;
+            text-align: center;
+            margin: 7.5px 7.5px 8px 7.5px ;
+        }
+
+        
+    }
+}

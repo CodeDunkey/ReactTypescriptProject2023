@@ -1,14 +1,46 @@
-.infoBarTop {
+.infoBarTopWrapper {
     display: flex;
+    // flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    background-image: linear-gradient(180deg, #1f1f1f, black);
-    border: 0.5px solid blue;
+    justify-content: center;
+    background: linear-gradient(to bottom, #2e2e2e 0%, #181818 50%, #020202 100%);
+    ;
+    // background-image: linear-gradient(180deg, #1f1f1f, black);
+    border-top: 1px solid #4d4d4d;
+    // border: 0.5px solid blue;
     // padding-left: 30px;
     // padding-right: 30px;
-    color: aliceblue;
 
-    // width: 100%;
+    width: 1140px;
     height: 37px;
-    border-radius: 4px;
+    border-radius: 4px 4px 0 0;
+
+    .fullTextAndIconWrapper {
+        // border: 1px solid purple;
+        display: flex;
+        flex-direction: row;
+
+        // padding-left: 30px;
+        // padding-right: 30px;
+        .boxTextAndIconWrapper {
+
+            // border: 1px solid green;
+            display: flex;
+            flex-direction: row;
+            margin: 0px 30px 0px 10px;
+
+            .infoText {
+                color: #fff;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-size: 14px;
+            }
+
+            .checkIcon {
+                height: 15px;
+                width: 15px;
+                margin: 0px 8px 0px 0px;
+                border-radius: 2px;
+            }
+        }
+    }
 }

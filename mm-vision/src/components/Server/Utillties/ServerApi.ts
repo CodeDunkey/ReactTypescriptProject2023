@@ -5,31 +5,30 @@ import { Product, CartLine, Picture } from "../../../Types/Types";
 import { pictureList } from "../Database/PictureArray";
 
 let cart: CartLine[] = [];
-
 class ServerAPI {
     // returns a promise wih a delay
     getProducts = async () => {
-    const products: Product[] = productList;
-    //  console.log("getProducts");
-     return new Promise<Product[]>((resolve, reject) => {
-        setTimeout(() => {
-        // console.log("Returning products");
-        resolve(products)
-    }, 3000);    
-     })
+        const products: Product[] = productList;
+        //  console.log("getProducts");
+        return new Promise<Product[]>((resolve, reject) => {
+            setTimeout(() => {
+                // console.log("Returning products");
+                resolve(products)
+            }, 3000);    
+        })
     }
     
     getPictures = async () => {
         const pictures: Picture[] = pictureList;
         //  console.log("getPictures");
-         return new Promise<Picture[]>((resolve, reject) => {
+        return new Promise<Picture[]>((resolve, reject) => {
             setTimeout(() => {
-            // console.log("Returning pictures");
-            resolve(pictures)
-        }, 3000);    
-         })
+                // console.log("Returning pictures");
+                resolve(pictures)
+            }, 3000);    
+        })
     }
-
+    
     addToCart = async (product: Product) => {
         // flyttet fra ClientApi
         const findCartItem = cart.find(find => find.itemId == product.id)
@@ -54,6 +53,7 @@ class ServerAPI {
             cart.push(addToCart);
         }
         
+        // console.log("cart in server: ", cart)
         
         return new Promise<CartLine[]>((resolve, reject) => {
             setTimeout(() =>{
@@ -84,6 +84,7 @@ class ServerAPI {
                 }, 1500);
             }); 
         }  
+        // console.log("cart in server: ", cart)
         return new Promise<CartLine[]>((resolve, ) => {
             setTimeout(() =>{
                 resolve([...cart])
