@@ -2,7 +2,7 @@ import { rejects } from "assert";
 import { resolve } from "path";
 import { productList} from "../Database/ProductList";
 import { Product, CartLine, Picture } from "../../../Types/Types";
-import { pictureList } from "../Database/PictureArray";
+import { pictureList } from "../Database/PictureArrayAndDescription";
 
 let cart: CartLine[] = [];
 class ServerAPI {

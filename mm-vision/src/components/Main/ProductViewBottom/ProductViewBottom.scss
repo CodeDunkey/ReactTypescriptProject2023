@@ -10,7 +10,7 @@
         // border: 0.5px solid orange;
         display: flex;
         flex-direction: column;
-        // justify-content: center;
+        justify-content: space-between;
         // align-items: center;
         color: #fff;
         background-color: #161616;
@@ -19,20 +19,53 @@
         width: 380px;
         margin: 7.5px;
 
-        .button {
-            margin: 7.5px;
+        .placePicture {
+            // border: 0.5px solid yellow;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            .showPicture {
+                // border: 0.5px solid red;
+                background-color: #161616;
+                margin: 10px 0px 0px 0px;
+                height: 250px;
+                width: 250px;
+            }
+            .textWrapper {
+                .textHeader {
+                    color: #fff;
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;                    }
+
+                .textUL {
+                    color: #fff;
+                    font-size: 14px;
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                }
+            }
+        }
+        .buttonAndPriceWrapper{
+
+            .button {
+                margin: 7.5px;
+            }
+    
+            .showPrice {
+                // border: 0.5px solid green;
+                border-radius: 4px;
+                padding: 5px 0;
+                font-size: 22px;
+                font-weight: 400;
+                background: #323232;
+                text-align: center;
+                margin: 7.5px 7.5px 8px 7.5px;
+            }
+            .showStock{
+                margin: 5px 0px 10px 0px
+            }
         }
 
-        .showPrice {
-            border-radius: 4px;
-            padding: 5px 0;
-            font-size: 22px;
-            font-weight: 400;
-            background: #323232;
-            text-align: center;
-            margin: 7.5px 7.5px 8px 7.5px ;
-        }
 
-        
     }
 }

@@ -22,16 +22,14 @@ export function cartTotalPrice({ cart }: { cart: CartLine[] }) {
             showPrice += totalPrice[i]
         }
     }
-    // console.log(
-    //     new Intl.NumberFormat('dk-DK', { style: 'currency', currency: 'DK' }).format(
-    //         showPrice,
-    //     ),
-    // );
+
     // console.log(
     //     new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(
     //         showPrice,
     //     ),
     // );
     // if(showPrice > 0)
-    return showPrice
+    return new Intl.NumberFormat('da', { currency: 'DKK' }).format(
+        showPrice,
+    )
 }

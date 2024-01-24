@@ -1,4 +1,4 @@
 import './Banner.scss'
 export default function Banner (){
-    return(<div className='banner'><div className='text'>UDVALGTE PRODUKTER</div></div>)
+    return(<div className='banner'><h1 className='text'>UDVALGTE PRODUKTER</h1></div>)
 }

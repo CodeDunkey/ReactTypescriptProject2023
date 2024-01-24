@@ -26,10 +26,15 @@ export interface ButtonProps {
     backgroundColor: Color;
 }
 
+interface ListItem {
+    li: string
+}
 export interface Picture {
     id: number,
     src: string,
-    pictureSize: string
+    pictureSize: string,
+    Header: string,
+    ListItems: ListItem[]
 }
 
 export type SetFunction = (product: Product) => void;

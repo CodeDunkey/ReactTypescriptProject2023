@@ -15,7 +15,7 @@ export default function ProductViewTop({products, pictures}: {products: Product[
             picturesViewTop.push(pict)
         }
     })
-    console.log("picturesViewTop: ", picturesViewTop)
+    
     const showPictures = picturesViewTop.map((element,index)=>{
         return <div className='productViewTopPicture' style={{backgroundImage: `url(${element.src})`, backgroundSize: element.pictureSize}}>{HoverText[index]}</div>
     })

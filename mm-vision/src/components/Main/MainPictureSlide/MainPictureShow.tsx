@@ -7,7 +7,7 @@ export default function MainPictureShow({ pictures }: { pictures: Picture[] }) {
     const [pictureNumber, setPictureNumber] = useState(1)
 
     const showSliderPicturesArray = pictures.slice(0, 4);
-    console.log(showSliderPicturesArray)
+    
     function currentSlide(para: number) {
         setPictureNumber(para)
     }
